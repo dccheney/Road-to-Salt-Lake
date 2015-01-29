@@ -5,6 +5,8 @@
  */
 package roadtosaltlake;
 
+import byui.cit260.roadToSaltLake.model.Wagon;
+
 /**
  *
  * @author David
@@ -15,7 +17,15 @@ public class RoadToSaltLake {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        Wagon wagon = new Wagon();
+        
+        wagon.setAxles("Four");
+        wagon.setCover("Canvas");
+        wagon.setWheels("Good");
+        
+        String wagonInfo = wagon.toString();
+         
+        System.out.println(wagonInfo);
+   }
     
 }
