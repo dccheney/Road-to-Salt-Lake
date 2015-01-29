@@ -5,6 +5,7 @@
  */
 package roadtosaltlake;
 
+import byui.cit260.roadToSaltLake.model.Player;
 import byui.cit260.roadToSaltLake.model.Wagon;
 
 /**
@@ -24,8 +25,20 @@ public class RoadToSaltLake {
         wagon.setWheels("Good");
         
         String wagonInfo = wagon.toString();
-         
+        
+        Player playerOne = new Player();
+        
+        playerOne.setOccupation("Banker");
+        playerOne.setAge(30);
+        playerOne.setGender("Male");
+        playerOne.setHealth("Good");
+        playerOne.setSkill(10);
+        playerOne.setName("Brigham Young");
+        
+        String playerOneInfo = playerOne.toString();
+        
         System.out.println(wagonInfo);
+        System.out.println(playerOneInfo);
    }
     
 }
