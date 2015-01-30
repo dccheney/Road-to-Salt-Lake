@@ -10,41 +10,41 @@ import java.util.Objects;
 
 /**
  *
- * @author als6
+ * @author Amy Staiger
  */
 public class Wagon implements Serializable{
     
     // class instance variables
-    private String wheels;
-    private String cover;
-    private String axles;
+    private int wheels;
+    private int cover;
+    private int axles;
 
     public Wagon() {
     }
 
     
     
-    public String getWheels() {
+    public int getWheels() {
         return wheels;
     }
 
-    public void setWheels(String wheels) {
+    public void setWheels(int wheels) {
         this.wheels = wheels;
     }
 
-    public String getCover() {
+    public int getCover() {
         return cover;
     }
 
-    public void setCover(String cover) {
+    public void setCover(int cover) {
         this.cover = cover;
     }
 
-    public String getAxles() {
+    public int getAxles() {
         return axles;
     }
 
-    public void setAxles(String axles) {
+    public void setAxles(int axles) {
         this.axles = axles;
     }
 
