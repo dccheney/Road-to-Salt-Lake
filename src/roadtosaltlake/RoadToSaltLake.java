@@ -6,8 +6,12 @@
 package roadtosaltlake;
 
 import byui.cit260.roadToSaltLake.model.Actor;
+import byui.cit260.roadToSaltLake.model.Game;
+import byui.cit260.roadToSaltLake.model.Location;
+import byui.cit260.roadToSaltLake.model.Map;
 import byui.cit260.roadToSaltLake.model.Player;
 import byui.cit260.roadToSaltLake.model.Resources;
+import byui.cit260.roadToSaltLake.model.Scene;
 import byui.cit260.roadToSaltLake.model.Wagon;
 
 /**
@@ -61,11 +65,41 @@ public class RoadToSaltLake {
         
         String actorInfo = actor.toString();
         
+        Game game = new Game();
+        game.setTotDistance(200);
+        game.setTotTime(10);
+        
+        String gameInfo = game.toString();
+        
+        Map map = new Map();
+        map.setColCount(2);
+        map.setRowCount(2);
+        
+        String mapInfo = map.toString();
+        
+        Location location = new Location();
+        location.setCol(3);
+        location.setRow(3);
+        location.setVisited(2);
+       
+        String locationInfo = location.toString();
+        
+        Scene scene = new Scene();
+        scene.setSickness("none");
+        scene.setTerrain("Plains");
+        scene.setWeather("Hot");
+        scene.setStore("none");
+        
+        String sceneInfo = scene.toString();
         
         System.out.println(wagonInfo);
         System.out.println(playerOneInfo);
         System.out.println(resourcesInfo);
         System.out.println(actorInfo);
+        System.out.println(gameInfo);
+        System.out.println(locationInfo);
+        System.out.println(mapInfo);
+        System.out.println(sceneInfo);
    }
     
 }
