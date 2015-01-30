@@ -6,11 +6,12 @@
 package roadtosaltlake;
 
 import byui.cit260.roadToSaltLake.model.Player;
+import byui.cit260.roadToSaltLake.model.Resources;
 import byui.cit260.roadToSaltLake.model.Wagon;
 
 /**
  *
- * @author David
+ * @author David and Amy
  */
 public class RoadToSaltLake {
 
@@ -18,11 +19,12 @@ public class RoadToSaltLake {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+         
         Wagon wagon = new Wagon();
         
-        wagon.setAxles("Four");
-        wagon.setCover("Canvas");
-        wagon.setWheels("Good");
+        wagon.setAxles(4);
+        wagon.setCover(2);
+        wagon.setWheels(4);
         
         String wagonInfo = wagon.toString();
         
@@ -37,8 +39,20 @@ public class RoadToSaltLake {
         
         String playerOneInfo = playerOne.toString();
         
+        Resources resources = new Resources();
+        
+        resources.setConsumables(5);
+        resources.setClothing(5);
+        resources.setAmmo(10);
+        resources.setWagonSupplies([0,0,0]);
+        resources.setOxen(3);
+        
+        String resourcesInfo = resources.toString();
+        
+        
         System.out.println(wagonInfo);
         System.out.println(playerOneInfo);
+        System.out.println(resourcesInfo);
    }
     
 }
