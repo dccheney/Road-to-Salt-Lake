@@ -13,7 +13,8 @@ import java.util.Objects;
  * @author Amy Staiger and David Cheney
  */
 public class Actor implements Serializable {
-    //class instance variables  
+    //class instance variables 
+    private String name;
     private String gender;
     private String health;
     private int age;
@@ -25,6 +26,14 @@ public class Actor implements Serializable {
     public Actor() {
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
     public String getGender() {
         return gender;
     }
@@ -51,12 +60,13 @@ public class Actor implements Serializable {
 
     @Override
     public String toString() {
-        return "Actor{" + "gender=" + gender + ", health=" + health + ", age=" + age + '}';
+        return "Actor{name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.name);
         hash = 11 * hash + Objects.hashCode(this.gender);
         hash = 11 * hash + Objects.hashCode(this.health);
         hash = 11 * hash + Objects.hashCode(this.age);
@@ -72,6 +82,9 @@ public class Actor implements Serializable {
             return false;
         }
         final Actor other = (Actor) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
         if (!Objects.equals(this.gender, other.gender)) {
             return false;
         }

@@ -54,6 +54,7 @@ public class RoadToSaltLake {
         
         Actor actor = new Actor();
         
+        actor.setName("John Taylor");
         actor.setGender("Male");
         actor.setHealth("Good");
         actor.setAge(35);

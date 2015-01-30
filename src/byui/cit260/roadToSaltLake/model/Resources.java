@@ -130,3 +130,4 @@ public class Resources implements Serializable{
     @Override
     public String toString() {
         return "Resources{" + "consumables=" + consumables + ", clothing=" + clothing + ", ammo=" + ammo + ", extraAxles=" + extraAxles + ", extraWheels=" + extraWheels + ", extraCovers=" + extraCovers + ", oxen=" + oxen + '}';}
+}
