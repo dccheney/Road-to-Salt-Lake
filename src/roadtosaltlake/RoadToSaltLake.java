@@ -5,13 +5,14 @@
  */
 package roadtosaltlake;
 
+import byui.cit260.roadToSaltLake.model.Actor;
 import byui.cit260.roadToSaltLake.model.Player;
 import byui.cit260.roadToSaltLake.model.Resources;
 import byui.cit260.roadToSaltLake.model.Wagon;
 
 /**
  *
- * @author David and Amy
+ * @author David Cheney and Amy Staiger
  */
 public class RoadToSaltLake {
 
@@ -44,15 +45,25 @@ public class RoadToSaltLake {
         resources.setConsumables(5);
         resources.setClothing(5);
         resources.setAmmo(10);
-        resources.setWagonSupplies([0,0,0]);
+        int[] array = {0,0,0};
+        resources.setWagonSupplies(array);
         resources.setOxen(3);
         
         String resourcesInfo = resources.toString();
+        
+        Actor actor = new Actor();
+        
+        actor.setGender("Male");
+        actor.setHealth("Good");
+        actor.setAge(35);
+        
+        String actorInfo = actor.toString();
         
         
         System.out.println(wagonInfo);
         System.out.println(playerOneInfo);
         System.out.println(resourcesInfo);
+        System.out.println(actorInfo);
    }
     
 }
