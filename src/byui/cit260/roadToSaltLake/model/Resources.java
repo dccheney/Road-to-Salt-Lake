@@ -17,13 +17,13 @@ public class Resources implements Serializable{
     private int consumables;
     private int clothing;
     private int ammo;
-    private int[] wagonSupplies;
+    private int extraAxles;
+    private int extraWheels;
+    private int extraCovers;
     private int oxen;
 
     public Resources() {
     }
-
-    
     
     public int getConsumables() {
         return consumables;
@@ -49,12 +49,28 @@ public class Resources implements Serializable{
         this.ammo = ammo;
     }
 
-    public int[] getWagonSupplies() {
-        return wagonSupplies;
+    public int getExtraAxles() {
+        return extraAxles;
     }
 
-    public void setWagonSupplies(int[] wagonSupplies) {
-        this.wagonSupplies = wagonSupplies;
+    public void setExtraAxles(int extraAxles) {
+        this.extraAxles = extraAxles;
+    }
+
+    public int getExtraWheels() {
+        return extraWheels;
+    }
+
+    public void setExtraWheels(int extraWheels) {
+        this.extraWheels = extraWheels;
+    }
+
+    public int getExtraCovers() {
+        return extraCovers;
+    }
+
+    public void setExtraCovers(int extraCovers) {
+        this.extraCovers = extraCovers;
     }
 
     public int getOxen() {
@@ -67,12 +83,14 @@ public class Resources implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.consumables);
-        hash = 67 * hash + Objects.hashCode(this.clothing);
-        hash = 67 * hash + Objects.hashCode(this.ammo);
-        hash = 67 * hash + Objects.hashCode(this.wagonSupplies);
-        hash = 67 * hash + Objects.hashCode(this.oxen);
+        int hash = 3;
+        hash = 17 * hash + this.consumables;
+        hash = 17 * hash + this.clothing;
+        hash = 17 * hash + this.ammo;
+        hash = 17 * hash + this.extraAxles;
+        hash = 17 * hash + this.extraWheels;
+        hash = 17 * hash + this.extraCovers;
+        hash = 17 * hash + this.oxen;
         return hash;
     }
 
@@ -85,19 +103,25 @@ public class Resources implements Serializable{
             return false;
         }
         final Resources other = (Resources) obj;
-        if (!Objects.equals(this.consumables, other.consumables)) {
+        if (this.consumables != other.consumables) {
             return false;
         }
-        if (!Objects.equals(this.clothing, other.clothing)) {
+        if (this.clothing != other.clothing) {
             return false;
         }
-        if (!Objects.equals(this.ammo, other.ammo)) {
+        if (this.ammo != other.ammo) {
             return false;
         }
-        if (!Objects.equals(this.wagonSupplies, other.wagonSupplies)) {
+        if (this.extraAxles != other.extraAxles) {
             return false;
         }
-        if (!Objects.equals(this.oxen, other.oxen)) {
+        if (this.extraWheels != other.extraWheels) {
+            return false;
+        }
+        if (this.extraCovers != other.extraCovers) {
+            return false;
+        }
+        if (this.oxen != other.oxen) {
             return false;
         }
         return true;
@@ -105,10 +129,4 @@ public class Resources implements Serializable{
 
     @Override
     public String toString() {
-        return "Resources{" + "consumables=" + consumables + ", clothing=" + clothing + ", ammo=" + ammo + ", wagonSupplies=" + wagonSupplies + ", oxen=" + oxen + '}';
-    }
-    
-    
-    
-    
-}
+        return "Resources{" + "consumables=" + consumables + ", clothing=" + clothing + ", ammo=" + ammo + ", extraAxles=" + extraAxles + ", extraWheels=" + extraWheels + ", extraCovers=" + extraCovers + ", oxen=" + oxen + '}';}

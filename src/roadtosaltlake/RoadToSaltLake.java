@@ -45,8 +45,9 @@ public class RoadToSaltLake {
         resources.setConsumables(5);
         resources.setClothing(5);
         resources.setAmmo(10);
-        int[] array = {0,0,0};
-        resources.setWagonSupplies(array);
+        resources.setExtraAxles(0);
+        resources.setExtraCovers(0);
+        resources.setExtraWheels(0);
         resources.setOxen(3);
         
         String resourcesInfo = resources.toString();
