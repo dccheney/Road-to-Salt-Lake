@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Amy Staiger
+ * @author Amy Staiger and David Cheney
  */
 public class Actor implements Serializable {
     //class instance variables  
