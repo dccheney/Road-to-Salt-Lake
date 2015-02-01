@@ -4,13 +4,14 @@
  * and open the template in the editor.
  */
 package byui.cit260.roadToSaltLake.model;
+import java.io.Serializable;
 
 
 /**
  *
  * @author David Cheney and Amy Staiger
  */
-public class Game {
+public class Game implements Serializable{
     private double totTime;
     private double totDistance;
 

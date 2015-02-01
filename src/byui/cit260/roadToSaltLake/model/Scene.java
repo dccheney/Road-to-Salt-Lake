@@ -5,13 +5,14 @@
  */
 package byui.cit260.roadToSaltLake.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author David Cheney and Amy Staiger
  */
-public class Scene {
+public class Scene implements Serializable{
     
     private String terrain;
     private String weather;

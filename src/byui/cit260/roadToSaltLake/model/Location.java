@@ -5,11 +5,13 @@
  */
 package byui.cit260.roadToSaltLake.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author David Cheney and Amy Staiger
  */
-public class Location {
+public class Location implements Serializable{
     
     private int row;
     private int col;
