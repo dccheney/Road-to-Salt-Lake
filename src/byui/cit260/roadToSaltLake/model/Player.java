@@ -20,6 +20,7 @@ public class Player implements Serializable{
     private String health;
     private int age;
     private float skill;
+    private float money;
     
     // methods
 
@@ -78,20 +79,24 @@ public class Player implements Serializable{
         this.skill = skill;
     }
 
-    @Override
-    public String toString() {
-        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + '}';
+    public float getMoney() {
+        return money;
+    }
+
+    public void setMoney(float money) {
+        this.money = money;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.occupation);
-        hash = 97 * hash + Objects.hashCode(this.name);
-        hash = 97 * hash + Objects.hashCode(this.gender);
-        hash = 97 * hash + Objects.hashCode(this.health);
-        hash = 97 * hash + this.age;
-        hash = 97 * hash + Float.floatToIntBits(this.skill);
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.occupation);
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.gender);
+        hash = 59 * hash + Objects.hashCode(this.health);
+        hash = 59 * hash + this.age;
+        hash = 59 * hash + Float.floatToIntBits(this.skill);
+        hash = 59 * hash + Float.floatToIntBits(this.money);
         return hash;
     }
 
@@ -122,9 +127,15 @@ public class Player implements Serializable{
         if (Float.floatToIntBits(this.skill) != Float.floatToIntBits(other.skill)) {
             return false;
         }
+        if (Float.floatToIntBits(this.money) != Float.floatToIntBits(other.money)) {
+            return false;
+        }
         return true;
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + '}';
+    }
+
 }
