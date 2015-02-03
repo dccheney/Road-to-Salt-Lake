@@ -41,6 +41,7 @@ public class RoadToSaltLake {
         playerOne.setHealth("Good");
         playerOne.setSkill(10);
         playerOne.setName("Brigham Young");
+        playerOne.SetMoney(400);
         
         String playerOneInfo = playerOne.toString();
         
@@ -100,6 +101,7 @@ public class RoadToSaltLake {
         System.out.println(locationInfo);
         System.out.println(mapInfo);
         System.out.println(sceneInfo);
+        
    }
     
 }
