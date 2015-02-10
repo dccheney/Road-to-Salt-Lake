@@ -31,8 +31,7 @@ public class store {
         {
             totalCost = itemQuantity * itemPrice;
         }
-
-        
+       
         return totalCost;
     }
 }
