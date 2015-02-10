@@ -9,6 +9,30 @@ package byui.cit260.roadToSaltLake.control;
  *
  * @author David Cheney and Amy Staiger
  */
-public class store {
+public class store {    
     
+    double purchaseInventory(double funds, int item, double itemQuantity, double itemPrice)
+    {   
+        double totalCost;
+        
+        if (funds <= 0)
+        {
+            return -1;
+        }
+        else if (item <= 0 || item > 5)
+        {
+            return -2;
+        }
+        else if (itemQuantity * itemPrice > funds)
+        {
+            return -3;
+        }
+        else
+        {
+            totalCost = itemQuantity * itemPrice;
+        }
+
+        
+        return totalCost;
+    }
 }
