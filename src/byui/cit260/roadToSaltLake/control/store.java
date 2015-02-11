@@ -27,6 +27,10 @@ public class store {
         {
             return -3;
         }
+        else if (itemPrice <= 0)
+        {
+            return -4;
+        }
         else
         {
             totalCost = itemQuantity * itemPrice;
