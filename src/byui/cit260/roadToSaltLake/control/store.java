@@ -23,13 +23,17 @@ public class store {
         {
             return -2;
         }
-        else if (itemQuantity * itemPrice > funds)
+        else if (itemQuantity <= 0)
         {
             return -3;
         }
         else if (itemPrice <= 0)
         {
             return -4;
+        }
+        else if (itemQuantity * itemPrice > funds)
+        {
+            return -5;
         }
         else
         {
