@@ -40,8 +40,6 @@ public class storeTest {
         double expResult = 120.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
     @Test
     public void testPurchaseInventory2() {
@@ -57,8 +55,7 @@ public class storeTest {
         double expResult = 20.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
+        // TODO review the generated test code and remove the default call to fail
     }
          
     @Test
@@ -75,16 +72,13 @@ public class storeTest {
         double expResult = 20.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
         
     @Test
     public void testPurchaseInventory4() {
         /*************************
          * Test Case #4
-         */
-        
+         */       
         
         System.out.println("\tTest Case #4");
         double funds = 800.00;
@@ -94,8 +88,6 @@ public class storeTest {
         double expResult = 90.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
     
     @Test
@@ -112,8 +104,6 @@ public class storeTest {
         double expResult = 150.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
     
     @Test
@@ -131,9 +121,7 @@ public class storeTest {
         double expResult = -2;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }
+   }
     
     @Test
     public void testPurchaseInventory7() {
@@ -150,8 +138,6 @@ public class storeTest {
         double expResult = -4;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
     
     @Test
@@ -169,9 +155,7 @@ public class storeTest {
         double expResult = -1;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-    }
+   }
     
     @Test
     public void testPurchaseInventory9() {
@@ -188,8 +172,6 @@ public class storeTest {
         double expResult = -3;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
     }
     
       @Test
@@ -206,10 +188,7 @@ public class storeTest {
         double itemPrice = 40.0;
         double expResult = -5;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
-        assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail.
-        // fail("The test case is a prototype.");
-        
+        assertEquals(expResult, result, 0.00);       
     }
     
     
