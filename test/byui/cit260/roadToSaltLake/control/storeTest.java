@@ -31,8 +31,7 @@ public class storeTest {
          * Test Case #1
          */
         
-        System.out.println("purchaseInventory");
-        
+              
         System.out.println("\tTest Case #1");
         double funds = 800.00;
         int item = 1;
