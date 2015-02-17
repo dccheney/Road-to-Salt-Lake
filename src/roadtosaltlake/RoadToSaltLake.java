@@ -42,6 +42,8 @@ public class RoadToSaltLake {
         playerOne.setSkill(10);
         playerOne.setName("Brigham Young");
         playerOne.setMoney(400);
+        playerOne.setUserPace(40);
+        playerOne.setUserMinutes(360);
         
         String playerOneInfo = playerOne.toString();
         

@@ -21,6 +21,8 @@ public class Player implements Serializable{
     private int age;
     private float skill;
     private float money;
+    private int userPace;
+    private int userMinutes;
     
     // methods
 
@@ -85,16 +87,34 @@ public class Player implements Serializable{
         this.money = money;
     }
 
+    public int getUserPace() {
+        return userPace;
+    }
+
+    public void setUserPace(int userPace) {
+        this.userPace = userPace;
+    }
+
+    public int getUserMinutes() {
+        return userMinutes;
+    }
+
+    public void setUserMinutes(int userMinutes) {
+        this.userMinutes = userMinutes;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.occupation);
-        hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + Objects.hashCode(this.gender);
-        hash = 59 * hash + Objects.hashCode(this.health);
-        hash = 59 * hash + this.age;
-        hash = 59 * hash + Float.floatToIntBits(this.skill);
-        hash = 59 * hash + Float.floatToIntBits(this.money);
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.occupation);
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.gender);
+        hash = 29 * hash + Objects.hashCode(this.health);
+        hash = 29 * hash + this.age;
+        hash = 29 * hash + Float.floatToIntBits(this.skill);
+        hash = 29 * hash + Float.floatToIntBits(this.money);
+        hash = 29 * hash + this.userPace;
+        hash = 29 * hash + this.userMinutes;
         return hash;
     }
 
@@ -128,12 +148,19 @@ public class Player implements Serializable{
         if (Float.floatToIntBits(this.money) != Float.floatToIntBits(other.money)) {
             return false;
         }
+        if (this.userPace != other.userPace) {
+            return false;
+        }
+        if (this.userMinutes != other.userMinutes) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + '}';
+        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + '}';
     }
+
 
 }
