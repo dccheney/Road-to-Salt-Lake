@@ -38,9 +38,9 @@ public class hunt {
         else
         {
             Random random = new Random();
-            for (int i = 0; i < skill; i++)
+            for (int i = 0; i < ammoToUse; i++)
             {
-                ammountFood += food[abs(random.nextInt()) % 10];
+                ammountFood += food[(abs(random.nextInt()) + skill) % 10];
             }
         }
         return ammountFood;
