@@ -24,27 +24,23 @@ public class TravelTest {
     public void testMapDistance() {
        // test 1 mapDistance invalid userPace
         
-      System.out.println("mapDistance test 1");
+        System.out.println("mapDistance test 1");
         int userPace = 5;
         double userMinutes = 360.0;
-       Travel instance = new Travel();
+        Travel instance = new Travel();
         double expResult = -1;
         double result = instance.mapDistance(userPace, userMinutes);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
    
        // test 2 mapDistance invalid userMinutes
         
         System.out.println("mapDistance test 2");
         userPace = 2;
-       userMinutes = 550.0;
-       instance = new Travel();
+        userMinutes = 550.0;
+        instance = new Travel();
         expResult = -2;
         result = instance.mapDistance(userPace, userMinutes);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     
        // test 3 mapDistance invalid userMinutes
         
@@ -55,8 +51,6 @@ public class TravelTest {
         expResult = -2;
         result = instance.mapDistance(userPace, userMinutes);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     
        // test 4 mapDistance invalid userPace
         
@@ -67,7 +61,5 @@ public class TravelTest {
         expResult = -1;
         result = instance.mapDistance(userPace, userMinutes);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
 }
