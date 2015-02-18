@@ -55,7 +55,6 @@ public class storeTest {
         double expResult = 20.00;
         double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
-        // TODO review the generated test code and remove the default call to fail
     }
          
     @Test
