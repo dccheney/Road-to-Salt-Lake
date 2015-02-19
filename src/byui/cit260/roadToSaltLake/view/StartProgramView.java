@@ -17,6 +17,9 @@ public class StartProgramView {
     {
             this.displayBanner();
     }
+    
+    
+    
 
     private void displayBanner() {
         System.out.println("\n\n*******************************************************************");
