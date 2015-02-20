@@ -5,6 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
+import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
 /**
@@ -38,8 +39,24 @@ public class MainMenuView {
         } while (selection !='E');
     }
 
-    private void doAction(char selection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void doAction(char choice) {
+        switch (toUpperCase(choice)) {
+            case 'N': // create and start a new game	
+                    this.startNewGame();
+                    break;
+            case 'C': // get and start an existing game	
+                    this.startExistingGame();
+                    break;
+            case 'H': // display the help menu
+                    this.displayHelpMenu();
+            case 'S': //save the current game	
+                    this.saveGame();
+            case 'E': // exit the program
+                    return;
+            default:
+                    System.out.println("\n*** Invalid selection *** Try again");
+                    break;
+        }
     }
 
     private String getInput() {
@@ -76,6 +93,22 @@ public class MainMenuView {
             return false;  
         }  
         return true; 
+    }
+
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called ***");
+    }
+
+    private void startExistingGame() {
+        System.out.println("*** startExistingGame function called ***");
+    }
+
+    private void displayHelpMenu() {
+            System.out.println("***startExistingGame function called ***");
+    }
+
+    private void saveGame() {
+                System.out.println("***displayHelpMenu function called ***");
     }
 }
     
