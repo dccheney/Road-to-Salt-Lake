@@ -5,8 +5,10 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
+import byui.cit260.roadToSaltLake.control.GameControl;
 import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
+import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
@@ -96,7 +98,12 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        // create a new game
+        GameControl.createNewGame(RoadToSaltLake.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
