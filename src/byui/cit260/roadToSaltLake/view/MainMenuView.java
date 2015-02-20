@@ -114,11 +114,11 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-            System.out.println("***startExistingGame function called ***");
+            System.out.println("*** displayHelpMenu function called ***");
     }
 
     private void saveGame() {
-                System.out.println("***displayHelpMenu function called ***");
+                System.out.println("*** saveGame function called ***");
     }
 }
 
