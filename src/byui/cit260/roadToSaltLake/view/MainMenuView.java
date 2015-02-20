@@ -18,7 +18,7 @@ public class MainMenuView {
                 +"\n Main Menu "
                 +"\n----------------------"
                 +"\nN - Start new game"
-                +"\nG - Get and start a saved game"
+                +"\nC - Continue a saved game"
                 +"\nH - Get help on how to play the game"
                 +"\nS - Save Game"
                 +"\nE - Exit Game"
@@ -57,7 +57,7 @@ public class MainMenuView {
             input = input.trim();
             
             //if the name is invalid (less than two characters in length
-           if (input.length() == 1) {
+            if (input.length() != 1 && isNumeric(input)) {
                 System.out.println("Invalid entry - the entry must not be blank");
                 continue; //and repeat again
             }
@@ -65,5 +65,17 @@ public class MainMenuView {
         }
         return input; // return the name.
     }               
+
+    private boolean isNumeric(String input) {
+        try  
+        {  
+            double d = Double.parseDouble(input);  
+        }  
+        catch(NumberFormatException nfe)  
+        {  
+            return false;  
+        }  
+        return true; 
+    }
 }
     
