@@ -72,8 +72,7 @@ public class StartProgramView {
             
             //prompt for the player's name
             System.out.println("Enter the player's name below:");
-            
-            
+                       
             // get the name from the keyboard and trim off the blanks
             playersName = keyboard.nextLine();
             playersName = playersName.trim();
@@ -84,13 +83,9 @@ public class StartProgramView {
                 continue; //and repeat again
             }
             break;
-        
         }
-        return playersName; // return the name
-        
-                
-                
-                }
+        return playersName; // return the name               
+    }
 
     public void displayWelcomeMessage(Player player) {
         System.out.println("\n\n==========================");
