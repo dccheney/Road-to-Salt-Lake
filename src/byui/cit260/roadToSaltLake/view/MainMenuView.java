@@ -27,7 +27,7 @@ public class MainMenuView {
     
     
     public void displayMenu() {
-        char selection = '';
+        char selection = ' ';
         do {
             System.out.println(MENU); //display the main menu
             
