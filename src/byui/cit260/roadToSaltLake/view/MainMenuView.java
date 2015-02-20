@@ -5,6 +5,8 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author AmyLucille
@@ -15,14 +17,11 @@ public class MainMenuView {
                 +"\n----------------------"
                 +"\n Main Menu "
                 +"\n----------------------"
-                +"\nC - Continue on Trail"
-                +"\nK - Check Supplies"
-                +"\nP - Change Pace"
-                +"\nF - Change Food Rations"
-                +"\nR - Stop to rest"
-                +"\nB - Buy Supplies"
-                +"\nE - Exit game"
-                +"\nS - Save game"
+                +"\nN - Start new game"
+                +"\nG - Get and start a saved game"
+                +"\nH - Get help on how to play the game"
+                +"\nS - Save Game"
+                +"\nE - Exit Game"
                 +"\n------------------------------";
     
     
@@ -37,15 +36,34 @@ public class MainMenuView {
             this.doAction(selection); //do action based on selection
             
         } while (selection !='E');
-        }
+    }
 
     private void doAction(char selection) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private String getInput() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-                
-    }
+        boolean valid = false; // indicates if the name has been retrieved
+        String input = null;
+        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
+        
+        while(!valid) { // while a valid menu item has not been retrieved
+            
+            //prompt for the menu selection
+            System.out.println("Enter in your selection:");
+
+            // get the selection from the keyboard and trim off the blanks
+            input = keyboard.nextLine();
+            input = input.trim();
+            
+            //if the name is invalid (less than two characters in length
+            if (input.length() == 1) {
+                System.out.println("Invalid entry - the entry must not be blank");
+                continue; //and repeat again
+            }
+            break;
+        }
+        return input; // return the name.
+    }               
+}
     
