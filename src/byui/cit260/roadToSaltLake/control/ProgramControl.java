@@ -6,15 +6,25 @@
 package byui.cit260.roadToSaltLake.control;
 
 import byui.cit260.roadToSaltLake.model.Player;
+import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
  * @author David Cheney and Amy Staiger
  */
 public class ProgramControl {
-    public static Player createPlayer(String playersName)
+    public static Player createPlayer(String name)
     {
-        System.out.println("\n*** createPlayer function called ***");
-        return null;
+        if (name == null) {
+            return null;
+        }
+        
+        Player player = new Player ();
+        player.setName(name);
+        
+        RoadToSaltLake.setPlayer(player); //save the player
+        
+        return player;
+        
     }
 }
