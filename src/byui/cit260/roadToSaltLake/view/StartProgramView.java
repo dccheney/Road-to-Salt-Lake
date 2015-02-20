@@ -5,6 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
+import byui.cit260.roadToSaltLake.control.ProgramControl;
 import byui.cit260.roadToSaltLake.model.Player;
 import java.util.Scanner;
 
@@ -27,10 +28,11 @@ public class StartProgramView {
         Player player = ProgramControl.createPlayer(playersName);
         
         //Display a personalized welcome message
-        
+        this.displayWelcomeMessage(player);
         
         //Display the Main Menu
-    
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     
     }
     
@@ -89,4 +91,13 @@ public class StartProgramView {
                 
                 
                 }
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n==========================");
+        System.out.println("\tWelcome to the game " +player.getName());
+        System.out.println("\tWe hope you have a lot of fun!");
+        System.out.println("==========================");
+    
+    
+    }
 }
