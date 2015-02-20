@@ -64,13 +64,13 @@ public class StartProgramView {
     }
 
     public String getPlayersName() {
-        boolean valid = false; // indicaes if the name has been retrieved
+        boolean valid = false; // indicates if the name has been retrieved
         String playersName = null;
         Scanner keyboard = new Scanner(System.in);  //keyboard input stream
         
         while(!valid) { // while a valid name has not been retrieved
             
-            //prompt for teh player's name
+            //prompt for the player's name
             System.out.println("Enter the player's name below:");
             
             
