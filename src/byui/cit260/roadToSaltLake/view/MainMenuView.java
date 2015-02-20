@@ -51,8 +51,10 @@ public class MainMenuView {
                     break;
             case 'H': // display the help menu
                     this.displayHelpMenu();
+                    break;
             case 'S': //save the current game	
                     this.saveGame();
+                    break;
             case 'E': // exit the program
                     return;
             default:
