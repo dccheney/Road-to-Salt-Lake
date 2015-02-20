@@ -99,8 +99,14 @@ public class MainMenuView {
         return true; 
     }
 
+
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+        // create a new game
+        GameControl.createNewGame(RoadToSaltLake.getPlayer());
+        
+        //display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
@@ -115,4 +121,4 @@ public class MainMenuView {
                 System.out.println("***displayHelpMenu function called ***");
     }
 }
- 
+    
