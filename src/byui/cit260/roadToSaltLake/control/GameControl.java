@@ -13,7 +13,7 @@ import byui.cit260.roadToSaltLake.model.Player;
  */
 public class GameControl {
 
-    private void createNewGame(Player player) {
+    public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame stub function called***");
     }
     
