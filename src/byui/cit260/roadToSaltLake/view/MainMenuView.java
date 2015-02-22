@@ -12,7 +12,7 @@ import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
- * @author AmyLucille
+ * @author AmyLucille and David Cheney
  */
 public class MainMenuView {
 

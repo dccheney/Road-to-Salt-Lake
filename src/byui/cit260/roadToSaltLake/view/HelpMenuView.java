@@ -5,36 +5,24 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import byui.cit260.roadToSaltLake.control.GameControl;
 import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
-import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
- * @author David Cheney & AmyLucille
+ * @author David
  */
-public class GameMenuView {
-    
+public class HelpMenuView {
     private final String MENU = "\n"
-        +"\n--------------------------------"
-        +"\n Game Menu "
-        +"\n--------------------------------"
-        +"\nC - Continue on trail"
-        +"\nS - Check Supplies"
-        +"\nP - Change pace"
-        +"\nF - Change food rations"
-        +"\nB - Buy supplies"
-        +"\nM - Main Menu"
-        +"\n--------------------------------";
-    
-    private void startNewGame()
-    {
-        GameControl.createNewGame(RoadToSaltLake.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
+        +"\n----------------------------------"
+        +"\n Help Menu "
+        +"\n----------------------------------"
+        +"\nG - What is the goal of the game?"
+        +"\nM - How is progress displayed?"
+        +"\nS - How to get supplies"
+        +"\nH - What hazards could I encounter"
+        +"\nR - Return"
+        +"\n----------------------------------";
     
     void displayMenu() {
         char selection = ' ';
@@ -46,31 +34,27 @@ public class GameMenuView {
             
             this.doAction(selection); //do action based on selection
             
-        } while (selection !='E');
+        } while (selection !='R');
     }
     
     void doAction(char choice)
     {
         switch (toUpperCase(choice)) {
-            case 'C': // Continue on Trail	
-                this.continueTrail();
+            case 'G': // Continue on Trail	
+                this.goal();
                 break;
-            case 'S': // Check Supplies
-                this.checkSupplies();
+            case 'M': // Check Supplies
+                this.progressDisplay();
                 break;
-            case 'P': // Change Pace
-                this.changePace();
+            case 'S': // Change Pace
+                this.howToGetSupplies();
                 break;
-            case 'F': // Change Food Rations
-                this.changeRations();
+            case 'H': // Change Food Rations
+                this.potentialHazards();
                 break;
-            case 'B': // Buy Supplies
-                this.buySupplies();
-                break;
-            case 'M':
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
-                break;
+            case 'R': // Buy Supplies
+                System.out.println("*** Leaving Help Menu ***");
+                return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -114,23 +98,19 @@ public class GameMenuView {
         return true; 
     }
 
-    private void continueTrail() {
-        System.out.println("*** ContinueTrail function called");
+    private void goal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void checkSupplies() {
-        System.out.println("*** CheckSupplies function called");
+    private void progressDisplay() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void changePace() {
-        System.out.println("*** ChangePace function called");
+    private void howToGetSupplies() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void changeRations() {
-        System.out.println("*** ChangeRations function called");
-    }
-
-    private void buySupplies() {
-        System.out.println("*** Buy Supplies function called");
+    private void potentialHazards() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
