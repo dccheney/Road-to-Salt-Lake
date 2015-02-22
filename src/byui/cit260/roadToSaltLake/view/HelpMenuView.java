@@ -54,6 +54,8 @@ public class HelpMenuView {
                 break;
             case 'R': // Buy Supplies
                 System.out.println("*** Leaving Help Menu ***");
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.displayMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -99,18 +101,18 @@ public class HelpMenuView {
     }
 
     private void goal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** goal function called ***");
     }
 
     private void progressDisplay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** progressDisplay function called ***");
     }
 
     private void howToGetSupplies() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** howToGetSupplies function called ***");
     }
 
     private void potentialHazards() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** potentialHazards function called ***");
     }
 }
