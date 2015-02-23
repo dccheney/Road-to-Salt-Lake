@@ -12,20 +12,20 @@ import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
- * @author David Cheney & AmyLucille
+ * @author David Cheney & Amy Staiger
  */
-public class GameMenuView {
-    
+public class StoreView {
     private final String MENU = "\n"
         +"\n--------------------------------"
-        +"\n Game Menu "
+        +"\n Store"
         +"\n--------------------------------"
-        +"\nC - Continue on trail"
-        +"\nS - Check Supplies"
-        +"\nP - Change pace"
-        +"\nF - Change food rations"
-        +"\nB - Buy supplies"
-        +"\nM - Main Menu"
+        +"\nWhat would you like to buy?"
+        +"\nO - Oxen"
+        +"\nF - Food"
+        +"\nC - Clothing"
+        +"\nA - Ammo"
+        +"\nW - Wagon Supplies"
+        +"\nE - Exit Store"
         +"\n--------------------------------";
     
     private void startNewGame()
@@ -46,26 +46,26 @@ public class GameMenuView {
             
             this.doAction(selection); //do action based on selection
             
-        } while (selection !='M');
+        } while (selection !='E');
     }
     
     void doAction(char choice)
     {
         switch (choice) {
-            case 'C': // Continue on Trail	
-                this.continueTrail();
+            case 'O': // Buy Oxen	
+                this.buyOxen();
                 break;
-            case 'S': // Check Supplies
-                this.checkSupplies();
+            case 'F': // Buy Food
+                this.buyFood();
                 break;
-            case 'P': // Change Pace
-                this.changePace();
+            case 'C': // buy Clothing
+                this.buyClothing();
                 break;
-            case 'F': // Change Food Rations
-                this.changeRations();
+            case 'A': // Change Food Rations
+                this.buyAmmo();
                 break;
-            case 'B': // Buy Supplies
-                this.buySupplies();
+            case 'W': // Buy Wagon Supplies
+                this.buyWagonSupplies();
                 break;
             case 'M':
                 return;
@@ -112,24 +112,25 @@ public class GameMenuView {
         return true; 
     }
 
-    private void continueTrail() {
-        System.out.println("*** ContinueTrail function called");
+    private void buyOxen() {
+        System.out.println("*** buyOxen function called ***");
     }
 
-    private void checkSupplies() {
-        System.out.println("*** CheckSupplies function called");
+    private void buyFood() {
+        System.out.println("*** buyFood function called ***");
     }
 
-    private void changePace() {
-        System.out.println("*** ChangePace function called");
+    private void buyClothing() {
+        System.out.println("*** buyClothing function called ***");
     }
 
-    private void changeRations() {
-        System.out.println("*** ChangeRations function called");
+    private void buyAmmo() {
+        System.out.println("*** buyAmmo function called ***");
     }
 
-    private void buySupplies() {
-        StoreView store = new StoreView();
-        store.displayMenu();
+    private void buyWagonSupplies() {
+        System.out.println("*** buyWagonSupplies function called ***");
     }
+
+    
 }
