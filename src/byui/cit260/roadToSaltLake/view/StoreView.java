@@ -67,7 +67,7 @@ public class StoreView {
             case 'W': // Buy Wagon Supplies
                 this.buyWagonSupplies();
                 break;
-            case 'M':
+            case 'E':
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
