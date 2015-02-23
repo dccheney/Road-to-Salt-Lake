@@ -42,7 +42,7 @@ public class GameMenuView {
             System.out.println(MENU); //display the main menu
             
             String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
+            selection = toUpperCase(input.charAt(0)); // get first character of string
             
             this.doAction(selection); //do action based on selection
             
@@ -51,7 +51,7 @@ public class GameMenuView {
     
     void doAction(char choice)
     {
-        switch (toUpperCase(choice)) {
+        switch (choice) {
             case 'C': // Continue on Trail	
                 this.continueTrail();
                 break;
@@ -68,9 +68,7 @@ public class GameMenuView {
                 this.buySupplies();
                 break;
             case 'M':
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMenu();
-                break;
+                return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;

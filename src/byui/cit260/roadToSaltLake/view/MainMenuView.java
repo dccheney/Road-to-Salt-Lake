@@ -34,7 +34,7 @@ public class MainMenuView {
             System.out.println(MENU); //display the main menu
             
             String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
+            selection = toUpperCase(input.charAt(0)); // get first character of string
             
             this.doAction(selection); //do action based on selection
             
@@ -42,7 +42,7 @@ public class MainMenuView {
     }
 
     private void doAction(char choice) {
-        switch (toUpperCase(choice)) {
+        switch (choice) {
             case 'N': // create and start a new game	
                     this.startNewGame();
                     break;

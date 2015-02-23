@@ -30,7 +30,7 @@ public class HelpMenuView {
             System.out.println(MENU); //display the main menu
             
             String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
+            selection = toUpperCase(input.charAt(0)); // get first character of string
             
             this.doAction(selection); //do action based on selection
             
@@ -39,7 +39,7 @@ public class HelpMenuView {
     
     void doAction(char choice)
     {
-        switch (toUpperCase(choice)) {
+        switch (choice) {
             case 'G': // Continue on Trail	
                 this.goal();
                 break;
@@ -54,8 +54,6 @@ public class HelpMenuView {
                 break;
             case 'R': // Buy Supplies
                 System.out.println("*** Leaving Help Menu ***");
-                GameMenuView gameMenu = new GameMenuView();
-                gameMenu.displayMenu();
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
