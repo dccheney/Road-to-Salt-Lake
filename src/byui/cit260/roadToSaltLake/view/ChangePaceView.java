@@ -19,7 +19,10 @@ public class ChangePaceView {
         //Display the menu 
         this.displayMenu();
         
-        //prompt the player to enter their selection
+        //prompt the player to enter their selection of pace
+        
+        
+        //prompt the player to enter their minutes travelled
         
         
         //display the option the player chose
@@ -27,8 +30,7 @@ public class ChangePaceView {
         
         //move ahead in the game
                 
-        
-        //display to the player their new location
+        //display to the player how long they travelled and how far they went
         
         
     }
@@ -43,7 +45,68 @@ public class ChangePaceView {
                 + "\n* wisely and take into account how many rations    *"
                 + "\n* you have and the health of your party members.   *");
         
+        System.out.println("****************************");
+   
+    }
     
+    public double paceTravelled () {
+        System.out.println("\n**************************");
+        
+        System.out.println("*                                           *"
+                + "\n*  Please choose your pace.                        *"
+                + "\n*1 - No travelling - 0 miles per hour              *"
+                + "\n*2 - Steady Pace - 2.5 miles per hour              *"
+                + "\n*3 - Strenuous Pace - 2.75 miles per hour          *"
+                + "\n*4 - Gruelling Pace - 5 miles per hour              *");
+        
+        System.out.println("****************************");
+     
+    void doAction(char choice)
+    {
+        switch (choice) {
+            case '1': // no travelling - 0 miles per hour	
+                this.noTravelling();
+                break;
+            case '2': // steady pace - 2.5 miles per hour
+                this.steadyPace();
+                break;
+            case '3': // strenuos pace - 2.75 miles per hour
+                this.strenuousPace();
+                break;
+            case '4': // gruelling pace - 5 miles per hour
+                this.gruellingPace();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        }    
+        
+     
+        
+     public double minutesTravelled () {
+        System.out.println("\n**************************");
+        
+        System.out.println("*                                           *"
+                + "\n*  Please indicate the number of minutes travelled.*");
+        
+        System.out.println("****************************");   
+   
+    }
+
+    private void noTravelling() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void strenuousPace() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void gruellingPace() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void steadyPace() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
 
