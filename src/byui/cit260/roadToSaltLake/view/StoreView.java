@@ -14,32 +14,40 @@ import roadtosaltlake.RoadToSaltLake;
  *
  * @author David Cheney & Amy Staiger
  */
-public class StoreView {
-    private final String MENU = "\n"
-        +"\n--------------------------------"
-        +"\n Store"
-        +"\n--------------------------------"
-        +"\nWhat would you like to buy?"
-        +"\nO - Oxen"
-        +"\nF - Food"
-        +"\nC - Clothing"
-        +"\nA - Ammo"
-        +"\nW - Wagon Supplies"
-        +"\nE - Exit Store"
-        +"\n--------------------------------";
+public class StoreView {    
+    //holds the amount of money that
+    private float totOxenCost = 0f;
+    private float totFoodCost = 0f;
+    private float totClothingCost = 0f;
+    private float totAmmoCost = 0f;
+    private float totWagonPartsCost = 0f;
+ 
+    private float bankAmount = RoadToSaltLake.getPlayer().getMoney();
     
-    private void startNewGame()
-    {
-        GameControl.createNewGame(RoadToSaltLake.getPlayer());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
+    private float total = 0f;
+    
+    GetQuantityView getQuantity = new GetQuantityView();
+    
     
     void displayMenu() {
         char selection = ' ';
         do {
-            System.out.println(MENU); //display the main menu
+            System.out.println("\n"
+            + "\n----------------------------------------------------------------"
+            + "\n Store"
+            + "\n----------------------------------------------------------------"
+            + "\nWhat would you like to buy?"
+            + "\nItem\t\t\t\t\tTotal"
+            + "\nO - Oxen\t\t\t\t$" + totOxenCost
+            + "\nF - Food\t\t\t\t$" + totFoodCost
+            + "\nC - Clothing\t\t\t\t$" + totClothingCost
+            + "\nA - Ammo\t\t\t\t$" + totAmmoCost
+            + "\nW - Wagon Supplies\t\t\t$" + totWagonPartsCost 
+            + "\n----------------------------------------------------------------"
+            + "\n\t\t\tTotal:\t\t$" + total
+            + "\nAmount you have:\t$" + (bankAmount - total)
+            + "\n\nE - Exit Store"
+            + "\n----------------------------------------------------------------"); //display the main menu
             
             String input = this.getInput(); // get the user's selection
             selection = toUpperCase(input.charAt(0)); // get first character of string
@@ -53,21 +61,22 @@ public class StoreView {
     {
         switch (choice) {
             case 'O': // Buy Oxen	
-                this.buyOxen();
+                totOxenCost = getQuantity.buyOxen();
                 break;
             case 'F': // Buy Food
-                this.buyFood();
+                totFoodCost = getQuantity.buyFood();
                 break;
             case 'C': // buy Clothing
-                this.buyClothing();
+                totClothingCost = getQuantity.buyClothing();
                 break;
             case 'A': // Change Food Rations
-                this.buyAmmo();
+                totAmmoCost = getQuantity.buyAmmo();
                 break;
             case 'W': // Buy Wagon Supplies
-                this.buyWagonSupplies();
+                totWagonPartsCost = getQuantity.buyWagonSupplies();
                 break;
             case 'E':
+                RoadToSaltLake.getPlayer().setMoney(-total);
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -103,34 +112,12 @@ public class StoreView {
     private boolean isNumeric(String input) {
         try  
         {  
-            double d = Double.parseDouble(input);  
+            float d = Float.parseFloat(input);  
         }  
         catch(NumberFormatException nfe)  
         {  
             return false;  
         }  
         return true; 
-    }
-
-    private void buyOxen() {
-        System.out.println("*** buyOxen function called ***");
-    }
-
-    private void buyFood() {
-        System.out.println("*** buyFood function called ***");
-    }
-
-    private void buyClothing() {
-        System.out.println("*** buyClothing function called ***");
-    }
-
-    private void buyAmmo() {
-        System.out.println("*** buyAmmo function called ***");
-    }
-
-    private void buyWagonSupplies() {
-        System.out.println("*** buyWagonSupplies function called ***");
-    }
-
-    
+    }   
 }

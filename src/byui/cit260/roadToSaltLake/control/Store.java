@@ -11,7 +11,7 @@ package byui.cit260.roadToSaltLake.control;
  */
 public class Store {    
     
-    double purchaseInventory(double funds, int item, double itemQuantity, double itemPrice)
+    double purchaseInventory(double funds, double itemQuantity, double itemPrice)
     {   
         double totalCost;
         
@@ -19,21 +19,17 @@ public class Store {
         {
             return -1;
         }
-        else if (item <= 0 || item > 5)
+        else if (itemQuantity <= 0)
         {
             return -2;
         }
-        else if (itemQuantity <= 0)
+        else if (itemPrice <= 0)
         {
             return -3;
         }
-        else if (itemPrice <= 0)
-        {
-            return -4;
-        }
         else if (itemQuantity * itemPrice > funds)
         {
-            return -5;
+            return -4;
         }
         else
         {
