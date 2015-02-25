@@ -38,7 +38,7 @@ public class StoreTest {
         double itemQuantity = 4;
         double itemPrice = 30.00;      
         double expResult = 120.00;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     @Test
@@ -53,7 +53,7 @@ public class StoreTest {
         double itemQuantity = 10;
         double itemPrice = 2.0;
         double expResult = 20.00;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
          
@@ -69,7 +69,7 @@ public class StoreTest {
         double itemQuantity = 4;
         double itemPrice = 5.0;
         double expResult = 20.00;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
         
@@ -85,7 +85,7 @@ public class StoreTest {
         double itemQuantity = 6;
         double itemPrice = 15.0;
         double expResult = 90.00;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
@@ -101,31 +101,14 @@ public class StoreTest {
         double itemQuantity = 3;
         double itemPrice = 50.0;
         double expResult = 150.00;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
     @Test
-    public void testPurchaseInventory6() {
-    /*************************
-         * Test Case #6
-         * Invalid
-         */
-       
-        System.out.println("\tTest Case #6");
-        double funds = 800.00;
-        int item = 0;
-        double itemQuantity = 6;
-        double itemPrice = 15.0;
-        double expResult = -2;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
-        assertEquals(expResult, result, 0.00);
-   }
-    
-    @Test
     public void testPurchaseInventory7() {
          /*************************
-         * Test Case #7
+         * Test Case #6
          * Invalid
          */
       
@@ -134,15 +117,15 @@ public class StoreTest {
         int item = 1;
         double itemQuantity = 6;
         double itemPrice = 0.0;
-        double expResult = -4;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double expResult = -3;
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
     @Test
     public void testPurchaseInventory8() {
         /*************************
-         * Test Case #8
+         * Test Case #7
          * Invalid
          */
 
@@ -152,14 +135,14 @@ public class StoreTest {
         double itemQuantity = 10;
         double itemPrice = 6.0;
         double expResult = -1;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
    }
     
     @Test
     public void testPurchaseInventory9() {
          /*************************
-         * Test Case #9
+         * Test Case #8
          * Invalid
          */
 
@@ -168,15 +151,15 @@ public class StoreTest {
         int item = 3;
         double itemQuantity = -6;
         double itemPrice = 89.0;
-        double expResult = -3;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double expResult = -2;
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
       @Test
     public void testPurchaseInventory10() {
         /*************************
-         * Test Case #10
+         * Test Case #9
          * Invalid
          */
 
@@ -185,10 +168,8 @@ public class StoreTest {
         int item = 4;
         double itemQuantity = 1;
         double itemPrice = 40.0;
-        double expResult = -5;
-        double result = instance.purchaseInventory(funds, item, itemQuantity, itemPrice);
+        double expResult = -4;
+        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);       
     }
-    
-    
 }
