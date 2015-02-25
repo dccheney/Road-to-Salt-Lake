@@ -106,13 +106,13 @@ public class StoreTest {
     }
     
     @Test
-    public void testPurchaseInventory7() {
+    public void testPurchaseInventory6() {
          /*************************
          * Test Case #6
          * Invalid
          */
       
-        System.out.println("\tTest Case #7");
+        System.out.println("\tTest Case #6");
         double funds = 800.00;
         int item = 1;
         double itemQuantity = 6;
@@ -123,13 +123,13 @@ public class StoreTest {
     }
     
     @Test
-    public void testPurchaseInventory8() {
+    public void testPurchaseInventory7() {
         /*************************
          * Test Case #7
          * Invalid
          */
 
-        System.out.println("\tTest Case #8");
+        System.out.println("\tTest Case #7");
         double funds = 0.00;
         int item = 2;
         double itemQuantity = 10;
@@ -140,13 +140,13 @@ public class StoreTest {
    }
     
     @Test
-    public void testPurchaseInventory9() {
+    public void testPurchaseInventory8() {
          /*************************
          * Test Case #8
          * Invalid
          */
 
-        System.out.println("\tTest Case #9");
+        System.out.println("\tTest Case #8");
         double funds = 800.00;
         int item = 3;
         double itemQuantity = -6;
@@ -157,13 +157,13 @@ public class StoreTest {
     }
     
       @Test
-    public void testPurchaseInventory10() {
+    public void testPurchaseInventory9() {
         /*************************
          * Test Case #9
          * Invalid
          */
 
-        System.out.println("\tTest Case #10");
+        System.out.println("\tTest Case #9");
         double funds = 30.00;
         int item = 4;
         double itemQuantity = 1;
