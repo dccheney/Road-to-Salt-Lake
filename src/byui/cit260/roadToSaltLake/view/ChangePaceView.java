@@ -25,9 +25,8 @@ public class ChangePaceView {
         //prompt the player to enter their minutes travelled
         
         
-        //display the option the player chose
-        
-        
+        //display the options the player chose
+                
         //move ahead in the game
                 
         //display to the player how long they travelled and how far they went
@@ -57,12 +56,11 @@ public class ChangePaceView {
                 + "\n*1 - No travelling - 0 miles per hour              *"
                 + "\n*2 - Steady Pace - 2.5 miles per hour              *"
                 + "\n*3 - Strenuous Pace - 2.75 miles per hour          *"
-                + "\n*4 - Gruelling Pace - 5 miles per hour              *");
+                + "\n*4 - Gruelling Pace - 5 miles per hour             *");
         
         System.out.println("****************************");
      
-    void doAction(char choice)
-    {
+    void doAction(char choice)    {
         switch (choice) {
             case '1': // no travelling - 0 miles per hour	
                 this.noTravelling();
@@ -80,7 +78,7 @@ public class ChangePaceView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }    
-        
+    }
      
         
      public double minutesTravelled () {
