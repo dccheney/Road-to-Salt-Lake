@@ -32,6 +32,10 @@ public class GameMenuView {
     {
         GameControl.createNewGame(RoadToSaltLake.getPlayer());
         
+        OccupationView occupation = new OccupationView();
+        occupation.displayOptions();
+        System.out.println("What is your occupation?");
+        
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }

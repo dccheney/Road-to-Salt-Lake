@@ -7,6 +7,7 @@ package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.ProgramControl;
 import byui.cit260.roadToSaltLake.model.Player;
+import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
 /**
@@ -37,7 +38,7 @@ public class StartProgramView {
     }
     
     private void displayBanner() {
-        System.out.println("\n*******************************************************************************");      
+        System.out.println("\n*********************************************************************************");      
         System.out.println("*                                                                               *"
                        + "\n* Welcome to the Road to the Great Salt Lake.  In this game you will            *"
                        + "\n* be taking on the role as one of the leaders in a wagon team in 1847.          *"
@@ -54,7 +55,7 @@ public class StartProgramView {
                        + "\n* diseases, and cross the plains, rivers and mountains until Brigham            *"
                        + "\n* Young declares 'This is the Place'.                                           *" );
         
-         System.out.println("\n******************************************************************************");
+         System.out.println("\n********************************************************************************");
         
     }
 
@@ -87,7 +88,9 @@ public class StartProgramView {
         System.out.println("\tWelcome to the game " + player.getName());
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("==============================================");
-    
-    
     }
+    
+    
+    /*  This all needs to be it's own view, fix the do while loop and call it after the start new game.
+       */
 }

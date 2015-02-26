@@ -33,12 +33,11 @@ public class StoreTest {
         
               
         System.out.println("\tTest Case #1");
-        double funds = 800.00;
-        int item = 1;
-        double itemQuantity = 4;
-        double itemPrice = 30.00;      
-        double expResult = 120.00;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 4f;
+        float itemPrice = 30.00f;      
+        float expResult = 120.00f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     @Test
@@ -48,12 +47,11 @@ public class StoreTest {
          */
         
         System.out.println("\tTest Case #2");
-        double funds = 800.00;
-        int item = 2;
-        double itemQuantity = 10;
-        double itemPrice = 2.0;
-        double expResult = 20.00;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 10f;
+        float itemPrice = 2.0f;
+        float expResult = 20.00f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
          
@@ -64,12 +62,11 @@ public class StoreTest {
          */
         
         System.out.println("\tTest Case #3");
-        double funds = 800.00;
-        int item = 3;
-        double itemQuantity = 4;
-        double itemPrice = 5.0;
-        double expResult = 20.00;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 4f;
+        float itemPrice = 5.0f;
+        float expResult = 20.00f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
         
@@ -80,12 +77,11 @@ public class StoreTest {
          */       
         
         System.out.println("\tTest Case #4");
-        double funds = 800.00;
-        int item = 4;
-        double itemQuantity = 6;
-        double itemPrice = 15.0;
-        double expResult = 90.00;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 6f;
+        float itemPrice = 15.0f;
+        float expResult = 90.00f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
@@ -96,12 +92,11 @@ public class StoreTest {
          */
  
         System.out.println("\tTest Case #5");
-        double funds = 800.00;
-        int item = 5;
-        double itemQuantity = 3;
-        double itemPrice = 50.0;
-        double expResult = 150.00;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 3f;
+        float itemPrice = 50.0f;
+        float expResult = 150.00f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
@@ -113,12 +108,11 @@ public class StoreTest {
          */
       
         System.out.println("\tTest Case #6");
-        double funds = 800.00;
-        int item = 1;
-        double itemQuantity = 6;
-        double itemPrice = 0.0;
-        double expResult = -3;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = 6f;
+        float itemPrice = 0.0f;
+        float expResult = -3f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
@@ -130,12 +124,11 @@ public class StoreTest {
          */
 
         System.out.println("\tTest Case #7");
-        double funds = 0.00;
-        int item = 2;
-        double itemQuantity = 10;
-        double itemPrice = 6.0;
-        double expResult = -1;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 0.00f;
+        float itemQuantity = 10f;
+        float itemPrice = 6.0f;
+        float expResult = -1f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
    }
     
@@ -147,12 +140,11 @@ public class StoreTest {
          */
 
         System.out.println("\tTest Case #8");
-        double funds = 800.00;
-        int item = 3;
-        double itemQuantity = -6;
-        double itemPrice = 89.0;
-        double expResult = -2;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 800.00f;
+        float itemQuantity = -6f;
+        float itemPrice = 89.0f;
+        float expResult = -2f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);
     }
     
@@ -164,12 +156,11 @@ public class StoreTest {
          */
 
         System.out.println("\tTest Case #9");
-        double funds = 30.00;
-        int item = 4;
-        double itemQuantity = 1;
-        double itemPrice = 40.0;
-        double expResult = -4;
-        double result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
+        float funds = 30.00f;
+        float itemQuantity = 1f;
+        float itemPrice = 40.0f;
+        float expResult = -4f;
+        float result = instance.purchaseInventory(funds, itemQuantity, itemPrice);
         assertEquals(expResult, result, 0.00);       
     }
 }

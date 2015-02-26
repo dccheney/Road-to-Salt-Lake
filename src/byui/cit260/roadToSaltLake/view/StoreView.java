@@ -5,7 +5,6 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import byui.cit260.roadToSaltLake.control.GameControl;
 import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
@@ -33,9 +32,9 @@ public class StoreView {
         char selection = ' ';
         do {
             System.out.println("\n"
-            + "\n----------------------------------------------------------------"
+            + "\n------------------------------------------------------"
             + "\n Store"
-            + "\n----------------------------------------------------------------"
+            + "\n------------------------------------------------------"
             + "\nWhat would you like to buy?"
             + "\nItem\t\t\t\t\tTotal"
             + "\nO - Oxen\t\t\t\t$" + totOxenCost
@@ -43,11 +42,11 @@ public class StoreView {
             + "\nC - Clothing\t\t\t\t$" + totClothingCost
             + "\nA - Ammo\t\t\t\t$" + totAmmoCost
             + "\nW - Wagon Supplies\t\t\t$" + totWagonPartsCost 
-            + "\n----------------------------------------------------------------"
+            + "\n------------------------------------------------------"
             + "\n\t\t\tTotal:\t\t$" + total
-            + "\nAmount you have:\t$" + (bankAmount - total)
+            + "\n\nAmount you have:\t$" + (bankAmount)
             + "\n\nE - Exit Store"
-            + "\n----------------------------------------------------------------"); //display the main menu
+            + "\n------------------------------------------------------"); //display the main menu
             
             String input = this.getInput(); // get the user's selection
             selection = toUpperCase(input.charAt(0)); // get first character of string
@@ -61,28 +60,33 @@ public class StoreView {
     {
         switch (choice) {
             case 'O': // Buy Oxen	
-                totOxenCost = getQuantity.buyOxen();
+                totOxenCost = getQuantity.buyOxen(bankAmount);
+                getTotal();
                 break;
             case 'F': // Buy Food
-                totFoodCost = getQuantity.buyFood();
+                totFoodCost = getQuantity.buyFood(bankAmount);
+                getTotal();
                 break;
             case 'C': // buy Clothing
-                totClothingCost = getQuantity.buyClothing();
+                totClothingCost = getQuantity.buyClothing(bankAmount);
+                getTotal();
                 break;
             case 'A': // Change Food Rations
-                totAmmoCost = getQuantity.buyAmmo();
+                totAmmoCost = getQuantity.buyAmmo(bankAmount);
+                getTotal();
                 break;
             case 'W': // Buy Wagon Supplies
-                totWagonPartsCost = getQuantity.buyWagonSupplies();
+                totWagonPartsCost = getQuantity.buyWagonSupplies(bankAmount);
+                getTotal();
                 break;
             case 'E':
+                
                 RoadToSaltLake.getPlayer().setMoney(-total);
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
     }
 
     private String getInput() {
@@ -120,4 +124,15 @@ public class StoreView {
         }  
         return true; 
     }   
+
+    private void getTotal() {
+        total = totOxenCost + totFoodCost + totClothingCost + totAmmoCost + totWagonPartsCost;
+        bankAmount -= total;
+        if (total + bankAmount != RoadToSaltLake.getPlayer().getMoney())
+        {
+            bankAmount = 1000 - total;
+        }
+        else
+            bankAmount -= total;
+    }
 }

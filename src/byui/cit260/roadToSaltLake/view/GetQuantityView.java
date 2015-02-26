@@ -5,8 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import byui.cit260.roadToSaltLake.control.GameControl;
-import static java.lang.Character.toUpperCase;
+import byui.cit260.roadToSaltLake.control.Store;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 /**
@@ -14,13 +13,15 @@ import roadtosaltlake.RoadToSaltLake;
  * @author David
  */
 public class GetQuantityView {
+    Store store = new Store();
+    
     private float numOxen = 0f;        // initializes the number of Oxen to be purchased
-    private float numFood = 0f;        // ""    ""    ""     ""     Food ""    ""
+    private float numFood = 0f;        // ""    ""    ""     ""     Food     ""    ""
     private float numClothing = 0f;    // ""    ""    ""     ""     Clothing ""    ""
-    private float numAmmoBoxes = 0f;   // ""    ""    ""     ""     Ammo ""    ""
-    private float numAxles = 0f;       // ""    ""    ""     ""     Axles ""    ""
-    private float numCovers = 0f;      // ""    ""    ""     ""     Covers ""    ""
-    private float numWheels = 0f;      // ""    ""    ""     ""     Wheels ""    ""
+    private float numAmmoBoxes = 0f;   // ""    ""    ""     ""     Ammo     ""    ""
+    private float numAxles = 0f;       // ""    ""    ""     ""     Axles    ""    ""
+    private float numCovers = 0f;      // ""    ""    ""     ""     Covers   ""    ""
+    private float numWheels = 0f;      // ""    ""    ""     ""     Wheels   ""    ""
     
     // Sets cost of each item and can't be changed
     private final float costOxen = 30f;         
@@ -28,7 +29,7 @@ public class GetQuantityView {
     private final float costClothing = 2f;
     private final float costAmmoBox = .10f;
     private final float costAxlesWheels = 10f;
-    private final float costCover = 5f;
+    private final float costCover = 5f;  
     
     private String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -67,30 +68,31 @@ public class GetQuantityView {
     }   
     
     
-    public float buyOxen() {
+    public float buyOxen(float bankAmount) {
         System.out.println("How many oxen would you like to purchase?"
                 + "\n\nWe recommend at least 4.  They cost $30 per ox");
+        float quantity = toFloat(getInput());
+        return store.purchaseInventory(bankAmount, quantity, costOxen);
         
-        System.out.println("*** buyOxen function called ***");
-        return numOxen * costOxen;
+       // System.out.println("*** buyOxen function called ***");
     }
 
-    public float buyFood() {
+    public float buyFood(float bankAmount) {
         System.out.println("*** buyFood function called ***");
         return numFood * costFood;
     }
 
-    public float buyClothing() {
+    public float buyClothing(float bankAmount) {
         System.out.println("*** buyClothing function called ***");
         return numFood * costFood;
     }
 
-    public float buyAmmo() {
+    public float buyAmmo(float bankAmount) {
         System.out.println("*** buyAmmo function called ***");
         return numAmmoBoxes * costAmmoBox;
     }
 
-    public float buyWagonSupplies() {
+    public float buyWagonSupplies(float bankAmount) {
         System.out.println("*** buyWagonSupplies function called ***");
         return (((numAxles + numWheels) * costAxlesWheels) + (numCovers * costCover));
     }
