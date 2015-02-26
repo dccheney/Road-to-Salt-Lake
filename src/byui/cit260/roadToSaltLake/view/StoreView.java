@@ -44,7 +44,7 @@ public class StoreView {
             + "\nW - Wagon Supplies\t\t\t$" + totWagonPartsCost 
             + "\n------------------------------------------------------"
             + "\n\t\t\tTotal:\t\t$" + total
-            + "\n\nAmount you have:\t$" + (bankAmount)
+            + "\n\nAmount you have:\t$" + bankAmount
             + "\n\nE - Exit Store"
             + "\n------------------------------------------------------"); //display the main menu
             
@@ -130,9 +130,7 @@ public class StoreView {
         bankAmount -= total;
         if (total + bankAmount != RoadToSaltLake.getPlayer().getMoney())
         {
-            bankAmount = 1000 - total;
+            bankAmount = RoadToSaltLake.getPlayer().getMoney() - total;
         }
-        else
-            bankAmount -= total;
     }
 }

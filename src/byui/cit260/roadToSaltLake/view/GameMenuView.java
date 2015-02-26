@@ -28,18 +28,6 @@ public class GameMenuView {
         +"\nM - Main Menu"
         +"\n--------------------------------";
     
-    private void startNewGame()
-    {
-        GameControl.createNewGame(RoadToSaltLake.getPlayer());
-        
-        OccupationView occupation = new OccupationView();
-        occupation.displayOptions();
-        System.out.println("What is your occupation?");
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-    
     void displayMenu() {
         char selection = ' ';
         do {

@@ -104,7 +104,11 @@ public class MainMenuView {
         // create a new game
         GameControl.createNewGame(RoadToSaltLake.getPlayer());
         
-        //display the game menu
+        // gets occupation from user
+        OccupationView occupation = new OccupationView();
+        occupation.displayOptions();
+        
+        // display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }
@@ -114,9 +118,9 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-            HelpMenuView helpMenu = new HelpMenuView();
-            
-            helpMenu.displayMenu();
+        HelpMenuView helpMenu = new HelpMenuView();
+
+        helpMenu.displayMenu();
     }
 
     private void saveGame() {

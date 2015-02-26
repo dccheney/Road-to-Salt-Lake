@@ -7,19 +7,15 @@ package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.Store;
 import java.util.Scanner;
-import roadtosaltlake.RoadToSaltLake;
 /**
  *
  * @author David
  */
 public class GetQuantityView {
     Store store = new Store();
-    
-    private float numOxen = 0f;        // initializes the number of Oxen to be purchased
-    private float numFood = 0f;        // ""    ""    ""     ""     Food     ""    ""
-    private float numClothing = 0f;    // ""    ""    ""     ""     Clothing ""    ""
-    private float numAmmoBoxes = 0f;   // ""    ""    ""     ""     Ammo     ""    ""
-    private float numAxles = 0f;       // ""    ""    ""     ""     Axles    ""    ""
+
+    private float quantity = 0f;
+    private float numAxles = 0f;       // initializes the number of Axles to be purchased
     private float numCovers = 0f;      // ""    ""    ""     ""     Covers   ""    ""
     private float numWheels = 0f;      // ""    ""    ""     ""     Wheels   ""    ""
     
@@ -30,6 +26,10 @@ public class GetQuantityView {
     private final float costAmmoBox = .10f;
     private final float costAxlesWheels = 10f;
     private final float costCover = 5f;  
+    
+    private float totAxles = 0f;
+    private float totWheels = 0f;
+    private float totCovers = 0f;
     
     private String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -70,31 +70,52 @@ public class GetQuantityView {
     
     public float buyOxen(float bankAmount) {
         System.out.println("How many oxen would you like to purchase?"
-                + "\n\nWe recommend at least 4.  They cost $30 per ox");
-        float quantity = toFloat(getInput());
+                + "\n\nWe recommend at least 4.  They cost $" + costOxen + " per ox");
+        quantity = toFloat(getInput());
         return store.purchaseInventory(bankAmount, quantity, costOxen);
         
        // System.out.println("*** buyOxen function called ***");
     }
 
     public float buyFood(float bankAmount) {
-        System.out.println("*** buyFood function called ***");
-        return numFood * costFood;
+        System.out.println("How many pounds of food would you like to purchase?"
+                + "\n\nWe recommend at least 200.  Food costs $" + costFood + " per pound");
+        quantity = toFloat(getInput());
+        return store.purchaseInventory(bankAmount, quantity, costFood);
     }
 
     public float buyClothing(float bankAmount) {
-        System.out.println("*** buyClothing function called ***");
-        return numFood * costFood;
+        System.out.println("How many sets of Clothing would you like to purchase?"
+                + "\n\nWe recommend at least 2 per person.  Each set costs $" + costClothing);
+        quantity = toFloat(getInput());
+        return store.purchaseInventory(bankAmount, quantity, costClothing);
     }
 
     public float buyAmmo(float bankAmount) {
-        System.out.println("*** buyAmmo function called ***");
-        return numAmmoBoxes * costAmmoBox;
+        System.out.println("How many boxes of ammunition would you like to purchase?"
+                + "\n\nThere are 20 rounds per box.  We recommend at least 3 boxes.  "
+                + "Each ammo box costs $" + costAmmoBox);
+        quantity = toFloat(getInput());
+        return store.purchaseInventory(bankAmount, quantity, costAmmoBox);
     }
 
     public float buyWagonSupplies(float bankAmount) {
-        System.out.println("*** buyWagonSupplies function called ***");
-        return (((numAxles + numWheels) * costAxlesWheels) + (numCovers * costCover));
+        System.out.println("How many extra axles would you like to purchase?"
+                + "\n\nWe recommend at least 2.  Each axle costs $" + costAxlesWheels);
+        numAxles = toFloat(getInput());
+        totAxles =  store.purchaseInventory(bankAmount, numAxles, costAxlesWheels);
+        
+        System.out.println("How many extra wheels would you like to purchase?"
+                + "\n\nWe recommend at least 2.  One wheel costs $" + costAxlesWheels);
+        numWheels = toFloat(getInput());
+        totWheels =  store.purchaseInventory(bankAmount, numWheels, costAxlesWheels);
+        
+        System.out.println("How many extra wagon covers would you like to purchase?"
+                + "\n\nWe recommend at least 2.  Each cover costs $" + costCover);
+        numCovers = toFloat(getInput());
+        totCovers =  store.purchaseInventory(bankAmount, numCovers, costCover);
+        
+        return (totAxles + totWheels + totCovers);
     }
 
     private float toFloat(String input) {

@@ -80,6 +80,7 @@ public class OccupationView {
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
+                this.displayOptions();
                 break;
         }
     }
