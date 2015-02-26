@@ -38,8 +38,7 @@ public class StartProgramView {
     }
     
     private void displayBanner() {
-        System.out.println("\n*********************************************************************************");      
-        System.out.println("*                                                                               *"
+        System.out.println("\n*********************************************************************************"
                        + "\n* Welcome to the Road to the Great Salt Lake.  In this game you will            *"
                        + "\n* be taking on the role as one of the leaders in a wagon team in 1847.          *"
                        + "\n* You and your family will depart with Brigham Young or one of the              *"
@@ -53,10 +52,8 @@ public class StartProgramView {
                        + "\n* The game begins in Winter Quarters, Nebraska.  During the game                *"
                        + "\n* you will need to purchase supplies, hunt for food, deal with random           *"
                        + "\n* diseases, and cross the plains, rivers and mountains until Brigham            *"
-                       + "\n* Young declares 'This is the Place'.                                           *" );
-        
-         System.out.println("\n********************************************************************************");
-        
+                       + "\n* Young declares 'This is the Place'.                                           *" 
+                       + "\n*********************************************************************************");
     }
 
     public String getPlayersName() {
