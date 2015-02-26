@@ -22,7 +22,7 @@ public class ChangePaceView {
             + "\n*2 - Steady Pace - 2.5 miles per hour              *"
             + "\n*3 - Strenuous Pace - 2.75 miles per hour          *"
             + "\n*4 - Gruelling Pace - 5 miles per hour             *"
-            + "\n*E -  Exit to Game Menu                             *"
+            + "\n*E - Exit to Game Menu                             *"
             + "\n****************************";
 
     void displayMenu() {
@@ -48,7 +48,7 @@ public class ChangePaceView {
 
         } while (selection != 'E');
     
-    
+    }
 
     private String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -110,5 +110,6 @@ public class ChangePaceView {
     private void steadyPace() {
             System.out.println(" No Steady Pace function called");
     }
-}
+
+
 }
