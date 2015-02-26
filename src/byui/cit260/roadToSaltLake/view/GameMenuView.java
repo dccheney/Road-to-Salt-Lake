@@ -67,7 +67,7 @@ public class GameMenuView {
             case 'B': // Buy Supplies
                 this.buySupplies();
                 break;
-            case 'M':
+            case 'M': // Main Menu
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -121,7 +121,8 @@ public class GameMenuView {
     }
 
     private void changePace() {
-        System.out.println("*** ChangePace function called");
+        ChangePaceView changePaceView = new ChangePaceView();
+        changePaceView.displayMenu();
     }
 
     private void changeRations() {

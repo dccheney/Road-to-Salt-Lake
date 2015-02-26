@@ -25,6 +25,8 @@ public class RoadToSaltLake {
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView ();
         startProgramView.startProgram();
+        
+        
    
    }
 
