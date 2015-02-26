@@ -81,7 +81,7 @@ public class StoreView {
                 break;
             case 'E':
                 
-                RoadToSaltLake.getPlayer().setMoney(-total);
+                RoadToSaltLake.getPlayer().setMoney(bankAmount);
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -126,11 +126,44 @@ public class StoreView {
     }   
 
     private void getTotal() {
+        this.checkError();
+        
         total = totOxenCost + totFoodCost + totClothingCost + totAmmoCost + totWagonPartsCost;
+        
         bankAmount -= total;
         if (total + bankAmount != RoadToSaltLake.getPlayer().getMoney())
         {
             bankAmount = RoadToSaltLake.getPlayer().getMoney() - total;
+        }
+    }
+
+    private void checkError() {
+        if (totOxenCost == -1 || totFoodCost == -1 || totClothingCost == -1 || 
+            totAmmoCost == -1 || totWagonPartsCost == -1)
+        {
+            System.out.println("You don't have enough money for that. Please try"
+                    + "again.");
+            this.displayMenu();
+        }
+        else if (totOxenCost == -2 || totFoodCost == -2 || totClothingCost == -2 || 
+            totAmmoCost == -2 || totWagonPartsCost == -2)
+        {
+            System.out.println("The item quantity must be greater than 0. Please"
+                    + "try again.");
+            this.displayMenu();
+        }
+        else if (totOxenCost == -3 || totFoodCost == -3 || totClothingCost == -3 || 
+            totAmmoCost == -3 || totWagonPartsCost == -3)
+        {
+            System.out.println("The item price was less than 0. Please try again.");
+            this.displayMenu();
+        }
+        else if (totOxenCost == -4 || totFoodCost == -4 || totClothingCost == -4 || 
+            totAmmoCost == -4 || totWagonPartsCost == -4)
+        {
+            System.out.println("You don't have enough money for that. Please try"
+                    + "again.");
+            this.displayMenu();
         }
     }
 }

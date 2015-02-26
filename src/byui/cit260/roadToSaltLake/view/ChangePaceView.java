@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author AmyLucille
  */
 public class ChangePaceView {
-
+// Travel travel = new Travel();
     private final String MENU = "\n"
             + "\n**************************"
             + "\n*  Please choose your pace.                        *"
@@ -101,6 +101,7 @@ public class ChangePaceView {
 
     private void strenuousPace() {
             System.out.println(" No Strenuous Pace function called");
+            //double distanceTravelled = travel.mapDistance(2.75, getMinutes())
     }
 
     private void gruellingPace() {
