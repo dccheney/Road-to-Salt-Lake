@@ -122,7 +122,7 @@ public class GameMenuView {
 
     private void changePace() {
         ChangePaceView changePaceView = new ChangePaceView();
-        changePaceView.changePace();
+        changePaceView.displayMenu();
     }
 
     private void changeRations() {
