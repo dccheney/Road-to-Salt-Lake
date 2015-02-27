@@ -14,83 +14,83 @@ import java.util.Objects;
  */
 public class Resources implements Serializable{
     //class instance variables
-    private int consumables;
-    private int clothing;
-    private int ammo;
-    private int extraAxles;
-    private int extraWheels;
-    private int extraCovers;
-    private int oxen;
+    private float consumables;
+    private float clothing;
+    private float ammo;
+    private float extraAxles;
+    private float extraWheels;
+    private float extraCovers;
+    private float oxen;
 
     public Resources() {
     }
     
-    public int getConsumables() {
+    public float getConsumables() {
         return consumables;
     }
 
-    public void setConsumables(int consumables) {
+    public void setConsumables(float consumables) {
         this.consumables = consumables;
     }
 
-    public int getClothing() {
+    public float getClothing() {
         return clothing;
     }
 
-    public void setClothing(int clothing) {
+    public void setClothing(float clothing) {
         this.clothing = clothing;
     }
 
-    public int getAmmo() {
+    public float getAmmo() {
         return ammo;
     }
 
-    public void setAmmo(int ammo) {
+    public void setAmmo(float ammo) {
         this.ammo = ammo;
     }
 
-    public int getExtraAxles() {
+    public float getExtraAxles() {
         return extraAxles;
     }
 
-    public void setExtraAxles(int extraAxles) {
+    public void setExtraAxles(float extraAxles) {
         this.extraAxles = extraAxles;
     }
 
-    public int getExtraWheels() {
+    public float getExtraWheels() {
         return extraWheels;
     }
 
-    public void setExtraWheels(int extraWheels) {
+    public void setExtraWheels(float extraWheels) {
         this.extraWheels = extraWheels;
     }
 
-    public int getExtraCovers() {
+    public float getExtraCovers() {
         return extraCovers;
     }
 
-    public void setExtraCovers(int extraCovers) {
+    public void setExtraCovers(float extraCovers) {
         this.extraCovers = extraCovers;
     }
 
-    public int getOxen() {
+    public float getOxen() {
         return oxen;
     }
 
-    public void setOxen(int oxen) {
+    public void setOxen(float oxen) {
         this.oxen = oxen;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + this.consumables;
-        hash = 17 * hash + this.clothing;
-        hash = 17 * hash + this.ammo;
-        hash = 17 * hash + this.extraAxles;
-        hash = 17 * hash + this.extraWheels;
-        hash = 17 * hash + this.extraCovers;
-        hash = 17 * hash + this.oxen;
+        int hash = 7;
+        hash = 19 * hash + Float.floatToIntBits(this.consumables);
+        hash = 19 * hash + Float.floatToIntBits(this.clothing);
+        hash = 19 * hash + Float.floatToIntBits(this.ammo);
+        hash = 19 * hash + Float.floatToIntBits(this.extraAxles);
+        hash = 19 * hash + Float.floatToIntBits(this.extraWheels);
+        hash = 19 * hash + Float.floatToIntBits(this.extraCovers);
+        hash = 19 * hash + Float.floatToIntBits(this.oxen);
         return hash;
     }
 
