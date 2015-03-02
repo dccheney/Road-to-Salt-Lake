@@ -161,8 +161,4 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + '}';
     }
-
-    
-
-
 }
