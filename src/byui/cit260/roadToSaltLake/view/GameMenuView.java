@@ -69,9 +69,10 @@ public class GameMenuView {
     }
 
     private String getInput() {
+        // this code initializes everything so ig is clean
         boolean valid = false; // indicates if the name has been retrieved
         String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
+        Scanner keyboard = new Scanner(System.in);  //keyboard input stream; use this code when gaterhing information from the user directly from the keyboard
         
         while(!valid) { // while a valid menu item has not been retrieved
             
@@ -84,7 +85,7 @@ public class GameMenuView {
             
             //if the name is invalid (less than two characters in length
             if (input.length() != 1 && isNumeric(input)) {
-                System.out.println("Invalid entry - the entry must not be blank");
+                System.out.println("Invalid entry.  Please try again");
                 continue; //and repeat again
             }
             break;
