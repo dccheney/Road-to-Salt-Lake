@@ -105,16 +105,16 @@ public class Player implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.occupation);
-        hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.gender);
-        hash = 29 * hash + Objects.hashCode(this.health);
-        hash = 29 * hash + this.age;
-        hash = 29 * hash + Float.floatToIntBits(this.skill);
-        hash = 29 * hash + Float.floatToIntBits(this.money);
-        hash = 29 * hash + this.userPace;
-        hash = 29 * hash + this.userMinutes;
+        int hash = 5;
+        hash = 47 * hash + Objects.hashCode(this.occupation);
+        hash = 47 * hash + Objects.hashCode(this.name);
+        hash = 47 * hash + Objects.hashCode(this.gender);
+        hash = 47 * hash + Objects.hashCode(this.health);
+        hash = 47 * hash + this.age;
+        hash = 47 * hash + Float.floatToIntBits(this.skill);
+        hash = 47 * hash + Float.floatToIntBits(this.money);
+        hash = 47 * hash + this.userPace;
+        hash = 47 * hash + this.userMinutes;
         return hash;
     }
 
@@ -161,6 +161,4 @@ public class Player implements Serializable{
     public String toString() {
         return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + '}';
     }
-
-
 }
