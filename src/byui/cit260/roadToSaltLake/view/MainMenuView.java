@@ -30,7 +30,6 @@ public class MainMenuView extends View {
     @Override
     public void doAction(Object obj) {
         String value = obj.toString();
-        System.out.print("Value is " + value);
         char choice = value.charAt(0);
         switch (choice) {
             case 'N': // create and start a new game	

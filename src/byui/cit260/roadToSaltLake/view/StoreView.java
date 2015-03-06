@@ -13,51 +13,59 @@ import roadtosaltlake.RoadToSaltLake;
  *
  * @author David Cheney & Amy Staiger
  */
-public class StoreView {    
+public class StoreView extends View {
+
     //holds the amount of money that
+
     private float totOxenCost = 0f;
     private float totFoodCost = 0f;
     private float totClothingCost = 0f;
     private float totAmmoCost = 0f;
     private float totWagonPartsCost = 0f;
- 
+
     private float bankAmount = RoadToSaltLake.getPlayer().getMoney();
-    
+
     private float total = 0f;
-    
+
     GetQuantityView getQuantity = new GetQuantityView();
-    
-    
-    void displayMenu() {
+
+    public StoreView() {
+        super("");
+    }
+
+    @Override
+    public void display() {
+        
         char selection = ' ';
         do {
-            System.out.println("\n"
-            + "\n------------------------------------------------------"
-            + "\n Store"
-            + "\n------------------------------------------------------"
-            + "\nWhat would you like to buy?"
-            + "\nItem\t\t\t\t\tTotal"
-            + "\nO - Oxen\t\t\t\t$" + totOxenCost
-            + "\nF - Food\t\t\t\t$" + totFoodCost
-            + "\nC - Clothing\t\t\t\t$" + totClothingCost
-            + "\nA - Ammo\t\t\t\t$" + totAmmoCost
-            + "\nW - Wagon Supplies\t\t\t$" + totWagonPartsCost 
-            + "\n------------------------------------------------------"
-            + "\n\t\t\tTotal:\t\t$" + total
-            + "\n\nAmount you have:\t$" + bankAmount
-            + "\n\nE - Exit Store"
-            + "\n------------------------------------------------------"); //display the main menu
+            System.out.println("\n\n------------------------------------------------------"
+                + "\n Store"
+                + "\n------------------------------------------------------"
+                + "\nWhat would you like to buy?"
+                + "\nItem\t\t\t\t\tTotal\nO - Oxen\t\t\t\t$" + totOxenCost
+                + "\nF - Food\t\t\t\t$" + totFoodCost
+                + "\nC - Clothing\t\t\t\t$" + totClothingCost
+                + "\nA - Ammo\t\t\t\t$" + totAmmoCost
+                + "\nW - Wagon Supplies\t\t\t$" + totWagonPartsCost
+                + "\n------------------------------------------------------"
+                + "\n\t\t\tTotal:\t\t$" + total
+                + "\n\nAmount you have:\t$" + bankAmount
+                + "\n\nE - Exit Store"
+                + "\n------------------------------------------------------"); //display the main menu 
             
             String input = this.getInput(); // get the user's selection
             selection = toUpperCase(input.charAt(0)); // get first character of string
             
             this.doAction(selection); //do action based on selection
             
-        } while (selection !='E');
+        } while (selection != 'E');
     }
     
-    void doAction(char choice)
-    {
+    
+    @Override
+        public void doAction(Object obj) {
+        String value = obj.toString();
+        char choice = value.charAt(0);
         switch (choice) {
             case 'O': // Buy Oxen	
                 totOxenCost = getQuantity.buyOxen(bankAmount);
@@ -80,50 +88,49 @@ public class StoreView {
                 getTotal();
                 break;
             case 'E':
-                
                 RoadToSaltLake.getPlayer().setMoney(bankAmount);
-                return;
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
     }
 
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
-        
-        while(!valid) { // while a valid menu item has not been retrieved
-            
-            //prompt for the menu selection
-            System.out.println("Enter in your selection:");
+//    private String getInput() {
+//        boolean valid = false; // indicates if the name has been retrieved
+//        String input = null;
+//        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
+//        
+//        while(!valid) { // while a valid menu item has not been retrieved
+//            
+//            //prompt for the menu selection
+//            System.out.println("Enter in your selection:");
+//
+//            // get the selection from the keyboard and trim off the blanks
+//            input = keyboard.nextLine();
+//            input = input.trim();
+//            
+//            //if the name is invalid (less than two characters in length
+//            if (input.length() != 1 && isNumeric(input)) {
+//                System.out.println("Invalid entry - the entry must not be blank");
+//                continue; //and repeat again
+//            }
+//            break;
+//        }
+//        return input; // return the name.
+//    }               
 
-            // get the selection from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            //if the name is invalid (less than two characters in length
-            if (input.length() != 1 && isNumeric(input)) {
-                System.out.println("Invalid entry - the entry must not be blank");
-                continue; //and repeat again
-            }
-            break;
-        }
-        return input; // return the name.
-    }               
-
-    private boolean isNumeric(String input) {
-        try  
-        {  
-            float d = Float.parseFloat(input);  
-        }  
-        catch(NumberFormatException nfe)  
-        {  
-            return false;  
-        }  
-        return true; 
-    }   
+//    private boolean isNumeric(String input) {
+//        try  
+//        {  
+//            float d = Float.parseFloat(input);  
+//        }  
+//        catch(NumberFormatException nfe)  
+//        {  
+//            return false;  
+//        }  
+//        return true; 
+//    }   
 
     private void getTotal() {
         this.checkError();
@@ -143,27 +150,27 @@ public class StoreView {
         {
             System.out.println("You don't have enough money for that. Please try"
                     + "again.");
-            this.displayMenu();
+            this.display();
         }
         else if (totOxenCost == -2 || totFoodCost == -2 || totClothingCost == -2 || 
             totAmmoCost == -2 || totWagonPartsCost == -2)
         {
             System.out.println("The item quantity must be greater than 0. Please"
                     + "try again.");
-            this.displayMenu();
+            this.display();
         }
         else if (totOxenCost == -3 || totFoodCost == -3 || totClothingCost == -3 || 
             totAmmoCost == -3 || totWagonPartsCost == -3)
         {
             System.out.println("The item price was less than 0. Please try again.");
-            this.displayMenu();
+            this.display();
         }
         else if (totOxenCost == -4 || totFoodCost == -4 || totClothingCost == -4 || 
             totAmmoCost == -4 || totWagonPartsCost == -4)
         {
             System.out.println("You don't have enough money for that. Please try"
                     + "again.");
-            this.displayMenu();
+            this.display();
         }
     }
 }

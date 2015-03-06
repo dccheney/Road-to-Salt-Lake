@@ -71,6 +71,6 @@ public class GameMenuView extends View {
 
     private void buySupplies() {
         StoreView store = new StoreView();
-        store.displayMenu();
+        store.display();
     }
 }
