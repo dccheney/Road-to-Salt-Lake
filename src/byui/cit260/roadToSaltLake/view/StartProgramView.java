@@ -33,7 +33,7 @@ public class StartProgramView {
         
         // Display the Main Menu
         MainMenuView mainMenu = new MainMenuView();
-        mainMenu.displayMenu();
+        mainMenu.display();
     
     }
     
@@ -87,7 +87,4 @@ public class StartProgramView {
         System.out.println("==============================================");
     }
     
-    
-    /*  This all needs to be it's own view, fix the do while loop and call it after the start new game.
-       */
 }
