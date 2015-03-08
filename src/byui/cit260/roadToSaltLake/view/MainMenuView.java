@@ -14,7 +14,6 @@ import roadtosaltlake.RoadToSaltLake;
  */
 public class MainMenuView extends View {
 
-    // private final String MENU = "\n"
     public MainMenuView() {
         super("\n\n----------------------"
             + "\n Main Menu "
@@ -28,7 +27,7 @@ public class MainMenuView extends View {
     }
 
     @Override
-    public void doAction(Object obj) {
+    public boolean doAction(Object obj) {
         String value = obj.toString();
         char choice = value.charAt(0);
         switch (choice) {
@@ -45,11 +44,12 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E': // exit the program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
     private void startNewGame() {
@@ -69,7 +69,7 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
 
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
     private void saveGame() {

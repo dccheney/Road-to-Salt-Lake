@@ -25,7 +25,8 @@ public class GameMenuView extends View {
             + "\n--------------------------------");
     }
     
-    public void doAction(Object obj) {
+    @Override
+    public boolean doAction(Object obj) {
         String value = obj.toString();
         char choice = value.charAt(0);
         switch (choice) {
@@ -45,11 +46,12 @@ public class GameMenuView extends View {
                 this.buySupplies();
                 break;
             case 'M': // Main Menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
     
     private void continueTrail() {
@@ -62,7 +64,7 @@ public class GameMenuView extends View {
 
     private void changePace() {
         ChangePaceView changePaceView = new ChangePaceView();
-        changePaceView.displayMenu();
+        changePaceView.display();
     }
 
     private void changeRations() {

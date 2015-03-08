@@ -18,10 +18,12 @@ public class OccupationView extends View{
             + "\n\nB - Banker"
             + "\nC - Carpenter"
             + "\nF - Farmer"
-            + "\nI - Info about each occupation");
+            + "\nI - Info about each occupation"
+            + "\nM - Return to main menu");
     }
     
-    public void doAction(Object obj)
+    @Override
+    public boolean doAction(Object obj)
     {
         Player player = RoadToSaltLake.getPlayer();
         String value = obj.toString();
@@ -47,6 +49,8 @@ public class OccupationView extends View{
             case 'I': // Info about Occupations
                 System.out.println("\nMore info about occupations");
                 break;
+            case 'M':
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 this.display();
@@ -55,5 +59,7 @@ public class OccupationView extends View{
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+        return true;
     }
+    
 }

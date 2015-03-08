@@ -37,7 +37,7 @@ public class GetQuantityView {
     private float totWheels = 0f;
     private float totCovers = 0f;
     
-    private String getInput() {
+    public String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
         String input = null;
         Scanner keyboard = new Scanner(System.in);  //keyboard input stream
@@ -136,6 +136,7 @@ public class GetQuantityView {
     private float toFloat(String input) {
         return toFloat(input, 0.0f);
     }
+    
     public static float toFloat(String str, float defaultValue) {
         if (str == null) {
             return defaultValue;

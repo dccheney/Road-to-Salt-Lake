@@ -37,7 +37,7 @@ public abstract class View implements ViewInterface{
             String input = this.getInput(); // get the user's selection
             selection = toUpperCase(input.charAt(0)); // get first character of string
             
-            this.doAction(selection); //do action based on selection
+            done = this.doAction(selection); //do action based on selection
             
         } while (!done);
     }

@@ -12,5 +12,5 @@ package byui.cit260.roadToSaltLake.view;
 public interface ViewInterface {
     public void display();
     public String getInput();
-    public void doAction(Object obj);
+    public boolean doAction(Object obj);
 }
