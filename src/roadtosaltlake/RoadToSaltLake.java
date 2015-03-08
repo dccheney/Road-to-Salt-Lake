@@ -18,16 +18,10 @@ import byui.cit260.roadToSaltLake.view.StartProgramView;
 public class RoadToSaltLake {
     private static Game currentGame = null;
     private static Player player = null; 
-    
- 
-    
-   
+
     public static void main(String[] args) {
         StartProgramView startProgramView = new StartProgramView ();
         startProgramView.startProgram();
-        
-        
-   
    }
 
     public static Game getCurrentGame() {
@@ -44,6 +38,5 @@ public class RoadToSaltLake {
 
     public static void setPlayer(Player player) {
         RoadToSaltLake.player = player;
-    }
-    
+    }   
 }
