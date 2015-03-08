@@ -14,21 +14,21 @@ import roadtosaltlake.RoadToSaltLake;
  */
 public class OccupationView extends View{
     public OccupationView(){
-        super("\n\nPlease choose your occupation:"
+        super("\n\n----------------------------------"
+            + "\n Please choose your occupation:"
+            + "\n----------------------------------"
             + "\n\nB - Banker"
             + "\nC - Carpenter"
             + "\nF - Farmer"
             + "\nI - Info about each occupation"
-            + "\nM - Return to main menu");
+            + "\n----------------------------------\n");
     }
     
     @Override
     public boolean doAction(Object obj)
     {
         Player player = RoadToSaltLake.getPlayer();
-        String value = obj.toString();
-        System.out.print("Value is " + value);
-        
+        String value = obj.toString();        
         char choice = value.charAt(0);
         switch (choice) {
             case 'B': // Banker	
@@ -49,12 +49,9 @@ public class OccupationView extends View{
             case 'I': // Info about Occupations
                 System.out.println("\nMore info about occupations");
                 break;
-            case 'M':
-                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
-                this.display();
-                break;
+                return false;
         }
         
         GameMenuView gameMenu = new GameMenuView();

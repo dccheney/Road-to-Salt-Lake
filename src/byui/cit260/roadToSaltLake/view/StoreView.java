@@ -50,7 +50,7 @@ public class StoreView extends View {
                             +  "\n\t\t\tTotal:\t\t$" + total
                             +  "\n\nAmount you have:\t$" + bankAmount
                             +  "\n\nE - Exit Store"
-                            +  "\n------------------------------------------------------"); //display the main menu 
+                            +  "\n------------------------------------------------------\n"); //display the main menu 
 
             String input = this.getInput(); // get the user's selection
             selection = toUpperCase(input.charAt(0)); // get first character of string

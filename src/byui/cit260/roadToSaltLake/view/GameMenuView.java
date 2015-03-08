@@ -22,7 +22,7 @@ public class GameMenuView extends View {
             + "\nF - Change food rations"
             + "\nB - Buy supplies"
             + "\nM - Main Menu"
-            + "\n--------------------------------");
+            + "\n--------------------------------\n");
     }
     
     @Override
@@ -68,7 +68,8 @@ public class GameMenuView extends View {
     }
 
     private void changeRations() {
-        System.out.println("*** ChangeRations function called");
+        ChangeRationsView changeRationsView = new ChangeRationsView();
+        changeRationsView.display();
     }
 
     private void buySupplies() {
