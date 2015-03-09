@@ -6,13 +6,13 @@
 package byui.cit260.roadToSaltLake.view;
 
 import static java.lang.Character.toUpperCase;
-import java.util.Scanner;
+
 
 /**
  *
  * @author David
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     private final String MENU = "\n"
         +"\n----------------------------------"
         +"\n Help Menu "
@@ -37,7 +37,7 @@ public class HelpMenuView {
         } while (selection !='R');
     }
     
-    void doAction(char choice)
+     void doAction(char choice)
     {
         switch (choice) {
             case 'G': // Continue on Trail	
@@ -62,41 +62,7 @@ public class HelpMenuView {
         
     }
 
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
-        
-        while(!valid) { // while a valid menu item has not been retrieved
-            
-            //prompt for the menu selection
-            System.out.println("Enter in your selection:");
-
-            // get the selection from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            //if the name is invalid (less than two characters in length
-            if (input.length() != 1 && isNumeric(input)) {
-                System.out.println("Invalid entry - the entry must not be blank");
-                continue; //and repeat again
-            }
-            break;
-        }
-        return input; // return the name.
-    }               
-
-    private boolean isNumeric(String input) {
-        try  
-        {  
-            double d = Double.parseDouble(input);  
-        }  
-        catch(NumberFormatException nfe)  
-        {  
-            return false;  
-        }  
-        return true; 
-    }
+    
 
     private void goal() {
         System.out.println("*** goal function called ***");
@@ -112,5 +78,15 @@ public class HelpMenuView {
 
     private void potentialHazards() {
         System.out.println("*** potentialHazards function called ***");
+    }
+
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

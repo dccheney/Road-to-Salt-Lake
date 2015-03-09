@@ -7,14 +7,13 @@ package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.GameControl;
 import static java.lang.Character.toUpperCase;
-import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 
 /**
  *
  * @author David Cheney & AmyLucille
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
     private final String MENU = "\n"
         +"\n--------------------------------"
@@ -68,42 +67,7 @@ public class GameMenuView {
         
     }
 
-    private String getInput() {
-        // this code initializes everything so ig is clean
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream; use this code when gaterhing information from the user directly from the keyboard
-        
-        while(!valid) { // while a valid menu item has not been retrieved
-            
-            //prompt for the menu selection
-            System.out.println("Enter in your selection:");
 
-            // get the selection from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-            
-            //if the name is invalid (less than two characters in length
-            if (input.length() != 1 && isNumeric(input)) {
-                System.out.println("Invalid entry.  Please try again");
-                continue; //and repeat again
-            }
-            break;
-        }
-        return input; // return the name.
-    }               
-
-    private boolean isNumeric(String input) {
-        try  
-        {  
-            double d = Double.parseDouble(input);  
-        }  
-        catch(NumberFormatException nfe)  
-        {  
-            return false;  
-        }  
-        return true; 
-    }
 
     private void continueTrail() {
         System.out.println("*** ContinueTrail function called");

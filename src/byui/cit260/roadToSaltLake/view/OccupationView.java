@@ -14,10 +14,10 @@ import roadtosaltlake.RoadToSaltLake;
  *
  * @author David
  */
-public class OccupationView {
+public class OccupationView extends View {
     public void displayOptions(){
         System.out.println("\n\nPlease choose your occupation:"
-            + "\n\nB - Banker"
+            + "\nB - Banker"
             + "\nC - Carpenter"
             + "\nF - Farmer"
             + "\nI - Info about each occupation");
@@ -94,5 +94,15 @@ public class OccupationView {
             return false;  
         }  
         return true; 
+    }
+
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

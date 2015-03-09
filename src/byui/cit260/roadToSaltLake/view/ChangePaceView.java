@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author AmyLucille
  */
-public class ChangePaceView {
+public class ChangePaceView extends View {
 // Travel travel = new Travel();
     private final String MENU = "\n"
             + "\n**************************"

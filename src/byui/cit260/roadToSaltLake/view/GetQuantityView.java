@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author David
  */
-public class GetQuantityView {
+public class GetQuantityView extends View {
     Store store = new Store();
     Resources resource = new Resources();
 
