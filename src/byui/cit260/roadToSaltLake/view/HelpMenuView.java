@@ -21,6 +21,10 @@ public class HelpMenuView extends View{
             + "\nR - Return"
             + "\n----------------------------------\n");
     }
+    @Override
+    public boolean doAction (Object obj){
+        String value = obj.toString();
+        char choice = value.charAt(0);
     
         switch (choice) {
             case 'G': // Continue on Trail	
@@ -44,10 +48,7 @@ public class HelpMenuView extends View{
         }   
         return false;
     }
-    @Override
-    public boolean doAction(Object obj) {
-        String value = obj.toString();
-        char choice = value.charAt(0);
+
     private void goal() {
         System.out.println("*** goal function called ***");
     }
@@ -64,14 +65,5 @@ public class HelpMenuView extends View{
         System.out.println("*** potentialHazards function called ***");
     }
 
-    @Override
-    public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
     

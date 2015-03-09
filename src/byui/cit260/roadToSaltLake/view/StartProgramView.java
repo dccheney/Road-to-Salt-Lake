@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author David Cheney & Amy Staiger
  */
-public class StartProgramView extends View {
+public class StartProgramView {
     public StartProgramView(){
     }
     public void startProgram() {
