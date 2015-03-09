@@ -13,68 +13,23 @@ import java.util.Scanner;
  *
  * @author AmyLucille
  */
-public class ChangePaceView extends View {
+public class ChangePaceView extends View{
 // Travel travel = new Travel();
-    private final String MENU = "\n"
-            + "\n**************************"
+    public ChangePaceView(){
+        super("\n\n**************************"
             + "\n*  Please choose your pace.                        *"
             + "\n*1 - No travelling - 0 miles per hour              *"
             + "\n*2 - Steady Pace - 2.5 miles per hour              *"
             + "\n*3 - Strenuous Pace - 2.75 miles per hour          *"
             + "\n*4 - Gruelling Pace - 5 miles per hour             *"
             + "\n*E - Exit to Game Menu                             *"
-            + "\n****************************";
-
-    void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println("\n****************************");
-
-            System.out.println("*                                           *"
-                    + "\n* When travelling along the trail                  *"
-                    + "\n* the travellers encounterd many different         *"
-                    + "\n* conditions that affected their pace.  Choose     *"
-                    + "\n* wisely and take into account how many rations    *"
-                    + "\n* you have and the health of your party members.   *");
-
-            System.out.println("****************************");
-
-            System.out.println(MENU); //display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = toUpperCase(input.charAt(0)); // get first character of string
-
-            this.doAction(selection); //do action based on selection
-
-        } while (selection != 'E');
+            + "\n****************************");
+    }
     
-    }
-
-    private String getInput() {
-        boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
-
-        while (!valid) { // while a valid menu item has not been retrieved
-
-            //prompt for the menu selection
-            System.out.println("Enter in your selection:");
-
-            // get the selection from the keyboard and trim off the blanks
-            input = keyboard.nextLine();
-            input = input.trim();
-
-            //if the name is invalid (less than two characters in length
-            if (input.length() != 1) {
-                System.out.println("Invalid entry - the entry must not be blank");
-                continue; //and repeat again
-            }
-            break;
-        }
-        return input; // return the name.
-    }
-
-    void doAction(char choice) {
+    @Override
+    public boolean doAction(Object obj) {
+        String value = obj.toString();
+        char choice = value.charAt(0);
         switch (choice) {
             case '1': // no travelling - 0 miles per hour	
                 this.noTravelling();
@@ -89,10 +44,12 @@ public class ChangePaceView extends View {
                 this.gruellingPace();
                 break;
             case 'E': // exit to main menu
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
     private void noTravelling() {

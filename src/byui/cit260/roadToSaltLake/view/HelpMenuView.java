@@ -5,40 +5,23 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import static java.lang.Character.toUpperCase;
-
-
 /**
  *
  * @author David
  */
-public class HelpMenuView extends View {
-    private final String MENU = "\n"
-        +"\n----------------------------------"
-        +"\n Help Menu "
-        +"\n----------------------------------"
-        +"\nG - What is the goal of the game?"
-        +"\nM - How is progress displayed?"
-        +"\nS - How to get supplies"
-        +"\nH - What hazards could I encounter"
-        +"\nR - Return"
-        +"\n----------------------------------";
-    
-    void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = toUpperCase(input.charAt(0)); // get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection !='R');
+public class HelpMenuView extends View{
+    public HelpMenuView(){
+        super("\n\n----------------------------------"
+            + "\n Help Menu "
+            + "\n----------------------------------"
+            + "\nG - What is the goal of the game?"
+            + "\nM - How is progress displayed?"
+            + "\nS - How to get supplies?"
+            + "\nH - What hazards could I encounter?"
+            + "\nR - Return"
+            + "\n----------------------------------\n");
     }
     
-     void doAction(char choice)
-    {
         switch (choice) {
             case 'G': // Continue on Trail	
                 this.goal();
@@ -54,16 +37,17 @@ public class HelpMenuView extends View {
                 break;
             case 'R': // Buy Supplies
                 System.out.println("*** Leaving Help Menu ***");
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }
-        
+        }   
+        return false;
     }
-
-    
-
+    @Override
+    public boolean doAction(Object obj) {
+        String value = obj.toString();
+        char choice = value.charAt(0);
     private void goal() {
         System.out.println("*** goal function called ***");
     }
@@ -90,3 +74,4 @@ public class HelpMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+    

@@ -5,43 +5,30 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import byui.cit260.roadToSaltLake.control.GameControl;
-import static java.lang.Character.toUpperCase;
-import roadtosaltlake.RoadToSaltLake;
-
 /**
  *
  * @author David Cheney & AmyLucille
  */
 public class GameMenuView extends View {
-    
-    private final String MENU = "\n"
-        +"\n--------------------------------"
-        +"\n Game Menu "
-        +"\n--------------------------------"
-        +"\nC - Continue on trail"
-        +"\nS - Check Supplies"
-        +"\nP - Change pace"
-        +"\nF - Change food rations"
-        +"\nB - Buy supplies"
-        +"\nM - Main Menu"
-        +"\n--------------------------------";
-    
-    void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println(MENU); //display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = toUpperCase(input.charAt(0)); // get first character of string
-            
-            this.doAction(selection); //do action based on selection
-            
-        } while (selection !='M');
+
+    //private final String MENU = "\n"
+    public GameMenuView() {
+        super("\n\n--------------------------------"
+            + "\n Game Menu "
+            + "\n--------------------------------"
+            + "\nC - Continue on trail"
+            + "\nS - Check Supplies"
+            + "\nP - Change pace"
+            + "\nF - Change food rations"
+            + "\nB - Buy supplies"
+            + "\nM - Main Menu"
+            + "\n--------------------------------\n");
     }
     
-    void doAction(char choice)
-    {
+    @Override
+    public boolean doAction(Object obj) {
+        String value = obj.toString();
+        char choice = value.charAt(0);
         switch (choice) {
             case 'C': // Continue on Trail	
                 this.continueTrail();
@@ -59,16 +46,13 @@ public class GameMenuView extends View {
                 this.buySupplies();
                 break;
             case 'M': // Main Menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
+        return false;
     }
-
-
-
     private void continueTrail() {
         System.out.println("*** ContinueTrail function called");
     }
@@ -79,15 +63,17 @@ public class GameMenuView extends View {
 
     private void changePace() {
         ChangePaceView changePaceView = new ChangePaceView();
-        changePaceView.displayMenu();
+        changePaceView.display();
     }
 
     private void changeRations() {
-        System.out.println("*** ChangeRations function called");
+        ChangeRationsView changeRationsView = new ChangeRationsView();
+        changeRationsView.display();
     }
 
     private void buySupplies() {
         StoreView store = new StoreView();
-        store.displayMenu();
+        store.display();
     }
 }
+    

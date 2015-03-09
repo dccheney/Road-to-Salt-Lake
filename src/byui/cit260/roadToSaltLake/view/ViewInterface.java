@@ -7,11 +7,10 @@ package byui.cit260.roadToSaltLake.view;
 
 /**
  *
- * @author AmyLucille
+ * @author David
  */
 public interface ViewInterface {
     public void display();
     public String getInput();
-    public void doAction (Object obj);
-    
+    public boolean doAction(Object obj);
 }
