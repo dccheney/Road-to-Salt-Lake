@@ -16,15 +16,15 @@ import roadtosaltlake.RoadToSaltLake;
 public class StoreView extends View {
 
     //holds the amount of money that
-    private float totOxenCost = 0f;
-    private float totFoodCost = 0f;
-    private float totClothingCost = 0f;
-    private float totAmmoCost = 0f;
-    private float totWagonPartsCost = 0f;
+    private double totOxenCost = 0;
+    private double totFoodCost = 0;
+    private double totClothingCost = 0;
+    private double totAmmoCost = 0;
+    private double totWagonPartsCost = 0;
 
-    private float bankAmount = RoadToSaltLake.getPlayer().getMoney();
+    private double bankAmount = RoadToSaltLake.getPlayer().getMoney();
 
-    private float total = 0f;
+    private double total = 0;
 
     GetQuantityView getQuantity = new GetQuantityView();
 

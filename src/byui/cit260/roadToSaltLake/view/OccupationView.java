@@ -34,17 +34,17 @@ public class OccupationView extends View{
             case 'B': // Banker	
                 player.setOccupation("Banker");
                 player.setSkill(2);
-                player.setMoney(1600);
+                player.setMoney(1600.0);
                 break;
             case 'C': // Carpenter
                 player.setOccupation("Carpenter");
                 player.setSkill(6);
-                player.setMoney(800);
+                player.setMoney(800.0);
                 break;
             case 'F': // Farmer
                 player.setOccupation("Farmer");
                 player.setSkill(10);
-                player.setMoney(400);
+                player.setMoney(400.0);
                 break;
             case 'I': // Info about Occupations
                 System.out.println("\nMore info about occupations");
