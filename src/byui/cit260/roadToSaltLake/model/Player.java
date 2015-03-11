@@ -24,7 +24,25 @@ public class Player implements Serializable{
     private int userPace;
     private int userMinutes;
     
+    private Game game;
+    private Wagon wagon;
     // methods
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Wagon getWagon() {
+        return wagon;
+    }
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
 
     public Player() {
     }
