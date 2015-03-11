@@ -117,9 +117,11 @@ public class Player implements Serializable{
         return resources;
     }
 
-    public void setResources(HashMap<String, Double> resources) {
-        this.resources = resources;
+    public void setResources(String item, Double quantity) {
+        this.resources.put(item, resources.get(item) + quantity);
+        //Need to figure out how to add to instead of change value.
     }
+   
 
     @Override
     public int hashCode() {
