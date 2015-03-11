@@ -6,7 +6,6 @@
 package byui.cit260.roadToSaltLake.view;
 
 import static java.lang.Character.toUpperCase;
-import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 
 /**
