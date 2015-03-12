@@ -143,6 +143,10 @@ public class Player implements Serializable{
     public HashMap<String, Double> getResources() {
         return resources;
     }
+    
+    public HashMap<String, Double> getResources(String item) {
+        return resources.get(item);
+    }
 
     public void setResources(String item, Double quantity) {
         this.resources.put(item, resources.get(item) + quantity);
