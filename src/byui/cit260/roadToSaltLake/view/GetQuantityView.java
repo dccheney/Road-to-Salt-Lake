@@ -16,8 +16,6 @@ public class GetQuantityView {
     Store store = new Store();
 
     private double quantity = 0.0; // initializes the number of Items to be purchased
-            
-    // Sets cost of each item and can't be changed
 
     private double totItems = 0.0;
     

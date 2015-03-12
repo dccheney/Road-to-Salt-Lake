@@ -36,8 +36,8 @@ public class Game implements Serializable{
         this.totDistance = totDistance;
     }
 
-    public HashMap<String, Double> getResourceCost() {
-        return resourceCost;
+    public HashMap<String, Double> getResourceCost(String item) {
+        return resourceCost[item];
     }
 
     public void setResourceCost(HashMap<String, Double> resourceCost) {
