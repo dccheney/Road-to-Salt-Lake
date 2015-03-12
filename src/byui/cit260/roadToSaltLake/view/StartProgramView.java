@@ -7,7 +7,6 @@ package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.ProgramControl;
 import byui.cit260.roadToSaltLake.model.Player;
-import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
 /**

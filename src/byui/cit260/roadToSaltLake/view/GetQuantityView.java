@@ -6,7 +6,6 @@
 package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.Store;
-import java.util.HashMap;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 /**
@@ -19,22 +18,8 @@ public class GetQuantityView {
     private double quantity = 0.0; // initializes the number of Items to be purchased
             
     // Sets cost of each item and can't be changed
-    HashMap <String, Double> resourceCost = new HashMap <String, Double>();
-    public GetQuantityView(){
-        resourceCost.put("Oxen", 30.0);
-        resourceCost.put("Food", .20); 
-        resourceCost.put("Clothing", 2.0);
-        resourceCost.put("Ammo", 2.0);
-        resourceCost.put("Axles", 10.0);
-        resourceCost.put("Wheels", 10.0);
-        resourceCost.put("Covers", 5.0);
-        
-    }
-    
+
     private double totItems = 0.0;
-    private double totAxles = 0.0;
-    private double totWheels = 0.0;
-    private double totCovers = 0.0;
     
     private String message = "";
     
