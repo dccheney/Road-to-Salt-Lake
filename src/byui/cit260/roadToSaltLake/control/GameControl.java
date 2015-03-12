@@ -17,9 +17,10 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame stub function called***");
-        createResourceCostList(game.getResourceCostList(resourceCost));
+        Game game = new Game();
+        createResourceCostList(game.getResourceCost());
     }
-    private void createResourceCostList(HashMap resourceCost){
+    private static void createResourceCostList(HashMap resourceCost){
         resourceCost.put("Oxen", 30.0);
         resourceCost.put("Food", .20); 
         resourceCost.put("Clothing", 2.0);

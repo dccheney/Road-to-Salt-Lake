@@ -59,6 +59,10 @@ public class Game implements Serializable{
     public HashMap<String, Double> getResourceCost() {
         return resourceCost;
     }
+    
+    public HashMap<String, Double> getResourceCost(String item) {
+        return resourceCost.get(item);
+    }
 
     public void setResourceCost(HashMap<String, Double> resourceCost) {
         this.resourceCost = resourceCost;
