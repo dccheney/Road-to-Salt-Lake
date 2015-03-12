@@ -16,6 +16,16 @@ public class Game implements Serializable{
     private double totDistance;
 
     private Map map;
+    private Player[] player;
+
+    public Player[] getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player[] player) {
+        this.player = player;
+    }
+    
 
     public Map getMap() {
         return map;

@@ -19,6 +19,16 @@ public class Scene implements Serializable{
     private String sickness;
     private String store;
 
+    public Location[] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[] locations) {
+        this.locations = locations;
+    }
+    
+    private Location[] locations;
+
     public Scene() {
     }
 

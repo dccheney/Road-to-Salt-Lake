@@ -26,7 +26,16 @@ public class Player implements Serializable{
     
     private Game game;
     private Wagon wagon;
+    private Resources[] resources;
     // methods
+
+    public Resources[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resources[] resources) {
+        this.resources = resources;
+    }
 
     public Game getGame() {
         return game;
