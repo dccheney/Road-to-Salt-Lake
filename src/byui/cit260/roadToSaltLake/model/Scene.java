@@ -18,7 +18,9 @@ public class Scene implements Serializable{
     private String weather;
     private String sickness;
     private String store;
-
+    
+    private Location[] locations;
+    
     public Location[] getLocations() {
         return locations;
     }
@@ -27,7 +29,7 @@ public class Scene implements Serializable{
         this.locations = locations;
     }
     
-    private Location[] locations;
+ 
 
     public Scene() {
     }
