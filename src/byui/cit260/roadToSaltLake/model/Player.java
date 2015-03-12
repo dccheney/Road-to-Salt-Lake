@@ -28,16 +28,7 @@ public class Player implements Serializable{
     
     private Game game;
     private Wagon wagon;
-    private Resources[] resources;
     // methods
-
-    public Resources[] getResources() {
-        return resources;
-    }
-
-    public void setResources(Resources[] resources) {
-        this.resources = resources;
-    }
 
     public Game getGame() {
         return game;
@@ -56,14 +47,7 @@ public class Player implements Serializable{
     }
 
     public Player() {
-        this.resources = new HashMap<String, Double>();
-        this.resources.put("Oxen", 0.0);
-        this.resources.put("Food", 0.0);
-        this.resources.put("Clothing", 0.0);
-        this.resources.put("Ammo", 0.0);
-        this.resources.put("Axles", 0.0);
-        this.resources.put("Wheels", 0.0);
-        this.resources.put("Covers", 0.0);
+        
     }
 
     
@@ -144,7 +128,7 @@ public class Player implements Serializable{
         return resources;
     }
     
-    public HashMap<String, Double> getResources(String item) {
+    public Double getResources(String item) {
         return resources.get(item);
     }
 

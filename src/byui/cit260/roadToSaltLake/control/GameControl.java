@@ -32,9 +32,10 @@ public class GameControl {
         Map map = MapControl.createMap(); //create and initialize new map
         game.setMap(map); // save map in game
         
-        MapControl.moveActosToStartingLocation(map); // move actors to starting position in the map
+        MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
                 
-        createResourceCostList(game.getResourceCostList(resourceCost));
+        createResourceCostList(game.getResourceCostList());
+        createPlayerResourceList(player.getResources());
     }
     private static void createResourceCostList(HashMap resourceCost){
         resourceCost.put("Oxen", 30.0);
@@ -44,6 +45,15 @@ public class GameControl {
         resourceCost.put("Axles", 10.0);
         resourceCost.put("Wheels", 10.0);
         resourceCost.put("Covers", 5.0);
+    }
+    private static void createPlayerResourceList(HashMap resources){
+        resources.put("Oxen", 0.0);
+        resources.put("Food", 0.0);
+        resources.put("Clothing", 0.0);
+        resources.put("Ammo", 0.0);
+        resources.put("Axles", 0.0);
+        resources.put("Wheels", 0.0);
+        resources.put("Covers", 0.0);
     }
     
     
