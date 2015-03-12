@@ -5,6 +5,8 @@
  */
 package byui.cit260.roadToSaltLake.control;
 
+import byui.cit260.roadToSaltLake.model.Map;
+
 /**
  *
  * @author AmyLucille
