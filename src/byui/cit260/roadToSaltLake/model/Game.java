@@ -5,6 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.model;
 import java.io.Serializable;
+import java.util.HashMap;
 
 
 /**
@@ -14,6 +15,7 @@ import java.io.Serializable;
 public class Game implements Serializable{
     private double totTime;
     private double totDistance;
+    HashMap <String, Double> resourceCost = new HashMap <String, Double>();
 
     private Map map;
     private Player[] player;
@@ -53,6 +55,16 @@ public class Game implements Serializable{
     public void setTotDistance(double totDistance) {
         this.totDistance = totDistance;
     }
+
+    public HashMap<String, Double> getResourceCost() {
+        return resourceCost;
+    }
+
+    public void setResourceCost(HashMap<String, Double> resourceCost) {
+        this.resourceCost = resourceCost;
+    }
+    
+    
 
     @Override
     public int hashCode() {

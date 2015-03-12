@@ -6,36 +6,22 @@
 package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.Store;
-import byui.cit260.roadToSaltLake.model.Resources;
 import java.util.Scanner;
+import roadtosaltlake.RoadToSaltLake;
 /**
  *
  * @author David
  */
 public class GetQuantityView  {
     Store store = new Store();
-    Resources resource = new Resources();
 
-    private float quantity = 0f;
-    private float numAxles = 0f;       // initializes the number of Axles to be purchased
-    private float numCovers = 0f;      // ""    ""    ""     ""     Covers   ""    ""
-    private float numWheels = 0f;      // ""    ""    ""     ""     Wheels   ""    ""
-    
+    private double quantity = 0.0; // initializes the number of Items to be purchased
+            
     // Sets cost of each item and can't be changed
-    private final float costOxen = 30f;         
-    private final float costFood = .20f;
-    private final float costClothing = 2f;
-    private final float costAmmoBox = .10f;
-    private final float costAxlesWheels = 10f;
-    private final float costCover = 5f;  
+
+    private double totItems = 0.0;
     
-    private float totOxen = 0f;
-    private float totFood = 0f;
-    private float totClothing = 0f;
-    private float totAmmo = 0f;
-    private float totAxles = 0f;
-    private float totWheels = 0f;
-    private float totCovers = 0f;
+    private String message = "";
     
     public String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -64,7 +50,7 @@ public class GetQuantityView  {
     private boolean isNumeric(String input) {
         try  
         {  
-            float d = Float.parseFloat(input);  
+            double d = Float.parseFloat(input);  
         }  
         catch(NumberFormatException nfe)  
         {  
@@ -74,70 +60,48 @@ public class GetQuantityView  {
     }   
     
     
-    public float buyOxen(float bankAmount) {
-        System.out.println("How many oxen would you like to purchase?"
-                + "\n\nWe recommend at least 4.  They cost $" + costOxen + " per ox");
-        quantity = toFloat(getInput());
-        totOxen = store.purchaseInventory(bankAmount, quantity, costOxen);
-        resource.setOxen(quantity);
-        return totOxen;
-    }
-
-    public float buyFood(float bankAmount) {
-        System.out.println("How many pounds of food would you like to purchase?"
-                + "\n\nWe recommend at least 200.  Food costs $" + costFood + " per pound");
-        quantity = toFloat(getInput());
-        totFood = store.purchaseInventory(bankAmount, quantity, costFood);
-        resource.setConsumables(quantity);
-        return totFood;
-    }
-
-    public float buyClothing(float bankAmount) {
-        System.out.println("How many sets of Clothing would you like to purchase?"
-                + "\n\nWe recommend at least 2 per person.  Each set costs $" + costClothing);
-        quantity = toFloat(getInput());
-        totClothing = store.purchaseInventory(bankAmount, quantity, costClothing);
-        resource.setClothing(quantity);
-        return totClothing;
-    }
-
-    public float buyAmmo(float bankAmount) {
-        System.out.println("How many boxes of ammunition would you like to purchase?"
+    public double buyItem(String item, double bankAmount) {
+        if ("Oxen".equals(item)){
+            message = "How many oxen would you like to purchase?"
+                + "\n\nWe recommend at least 4.  They cost $" + resourceCost.get(item) + " per ox";
+        }
+        else if ("Food".equals(item)){
+            message = "How many pounds of food would you like to purchase?"
+                + "\n\nWe recommend at least 200.  Food costs $" + resourceCost.get(item) + " per pound";
+        }
+        else if ("Clothing".equals(item)){
+            message = "How many sets of Clothing would you like to purchase?"
+                + "\n\nWe recommend at least 2 per person.  Each set costs $" + resourceCost.get(item);
+        }
+        else if ("Ammo".equals(item)){
+            message = "How many boxes of ammunition would you like to purchase?"
                 + "\n\nThere are 20 rounds per box.  We recommend at least 3 boxes.  "
-                + "Each ammo box costs $" + costAmmoBox);
+                + "Each ammo box costs $" + resourceCost.get(item);
+        }
+        else if ("Axles".equals(item)){
+            message = "How many extra axles would you like to purchase?"
+                    + "\n\nWe recommend at least 2.  Each axle costs $" + resourceCost.get(item);
+        }
+        else if ("Wheels".equals(item)){
+            message = "How many extra wheels would you like to purchase?"
+                    + "\n\nWe recommend at least 2.  One wheel costs $" + resourceCost.get(item);
+        }
+        else if ("Covers".equals(item)){
+            message = "How many extra wagon covers would you like to purchase?"
+                    + "\n\nWe recommend at least 2.  Each cover costs $" + resourceCost.get(item);
+        }
+        System.out.println(message);
         quantity = toFloat(getInput());
-        totAmmo = store.purchaseInventory(bankAmount, quantity, costAmmoBox);
-        resource.setAmmo(quantity);
-        return totAmmo;
+        totItems = store.purchaseInventory(bankAmount, quantity, resourceCost.get(item));
+        RoadToSaltLake.getPlayer().setResources(item,quantity);
+        return totItems;
     }
 
-    public float buyWagonSupplies(float bankAmount) {
-        System.out.println("How many extra axles would you like to purchase?"
-                + "\n\nWe recommend at least 2.  Each axle costs $" + costAxlesWheels);
-        numAxles = toFloat(getInput());
-        totAxles =  store.purchaseInventory(bankAmount, numAxles, costAxlesWheels);
-        resource.setExtraAxles(numAxles);
-        
-        System.out.println("How many extra wheels would you like to purchase?"
-                + "\n\nWe recommend at least 2.  One wheel costs $" + costAxlesWheels);
-        numWheels = toFloat(getInput());
-        totWheels =  store.purchaseInventory(bankAmount, numWheels, costAxlesWheels);
-        resource.setExtraWheels(numWheels);
-        
-        System.out.println("How many extra wagon covers would you like to purchase?"
-                + "\n\nWe recommend at least 2.  Each cover costs $" + costCover);
-        numCovers = toFloat(getInput());
-        totCovers =  store.purchaseInventory(bankAmount, numCovers, costCover);
-        resource.setExtraCovers(numCovers);
-        
-        return (totAxles + totWheels + totCovers);
-    }
-
-    private float toFloat(String input) {
-        return toFloat(input, 0.0f);
+    private double toFloat(String input) {
+        return toFloat(input, 0.0);
     }
     
-    public static float toFloat(String str, float defaultValue) {
+    public static double toFloat(String str, double defaultValue) {
         if (str == null) {
             return defaultValue;
         }     

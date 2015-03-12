@@ -6,6 +6,7 @@
 package byui.cit260.roadToSaltLake.model;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Objects;
 
 /**
@@ -20,9 +21,10 @@ public class Player implements Serializable{
     private String health;
     private int age;
     private float skill;
-    private float money;
+    private double money;
     private int userPace;
     private int userMinutes;
+    private HashMap <String, Double> resources;
     
     private Game game;
     private Wagon wagon;
@@ -54,6 +56,14 @@ public class Player implements Serializable{
     }
 
     public Player() {
+        this.resources = new HashMap<String, Double>();
+        this.resources.put("Oxen", 0.0);
+        this.resources.put("Food", 0.0);
+        this.resources.put("Clothing", 0.0);
+        this.resources.put("Ammo", 0.0);
+        this.resources.put("Axles", 0.0);
+        this.resources.put("Wheels", 0.0);
+        this.resources.put("Covers", 0.0);
     }
 
     
@@ -106,11 +116,11 @@ public class Player implements Serializable{
         this.skill = skill;
     }
 
-    public float getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(float money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -130,18 +140,29 @@ public class Player implements Serializable{
         this.userMinutes = userMinutes;
     }
 
+    public HashMap<String, Double> getResources() {
+        return resources;
+    }
+
+    public void setResources(String item, Double quantity) {
+        this.resources.put(item, resources.get(item) + quantity);
+        //Need to figure out how to add to instead of change value.
+    }
+   
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + Objects.hashCode(this.occupation);
-        hash = 47 * hash + Objects.hashCode(this.name);
-        hash = 47 * hash + Objects.hashCode(this.gender);
-        hash = 47 * hash + Objects.hashCode(this.health);
-        hash = 47 * hash + this.age;
-        hash = 47 * hash + Float.floatToIntBits(this.skill);
-        hash = 47 * hash + Float.floatToIntBits(this.money);
-        hash = 47 * hash + this.userPace;
-        hash = 47 * hash + this.userMinutes;
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.occupation);
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + Objects.hashCode(this.gender);
+        hash = 29 * hash + Objects.hashCode(this.health);
+        hash = 29 * hash + this.age;
+        hash = 29 * hash + Float.floatToIntBits(this.skill);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
+        hash = 29 * hash + this.userPace;
+        hash = 29 * hash + this.userMinutes;
+        hash = 29 * hash + Objects.hashCode(this.resources);
         return hash;
     }
 
@@ -172,7 +193,7 @@ public class Player implements Serializable{
         if (Float.floatToIntBits(this.skill) != Float.floatToIntBits(other.skill)) {
             return false;
         }
-        if (Float.floatToIntBits(this.money) != Float.floatToIntBits(other.money)) {
+        if (Double.doubleToLongBits(this.money) != Double.doubleToLongBits(other.money)) {
             return false;
         }
         if (this.userPace != other.userPace) {
@@ -181,11 +202,14 @@ public class Player implements Serializable{
         if (this.userMinutes != other.userMinutes) {
             return false;
         }
+        if (!Objects.equals(this.resources, other.resources)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + '}';
+        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + ", resources=" + resources + '}';
     }
 }

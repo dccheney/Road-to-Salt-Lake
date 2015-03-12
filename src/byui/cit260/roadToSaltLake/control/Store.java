@@ -11,9 +11,9 @@ package byui.cit260.roadToSaltLake.control;
  */
 public class Store {    
     
-    public float purchaseInventory(float funds, float itemQuantity, float itemPrice)
+    public double purchaseInventory(double funds, double itemQuantity, double itemPrice)
     {   
-        float totalCost;
+        double totalCost;
         
         if (funds <= 0)
         {
