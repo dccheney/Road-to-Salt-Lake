@@ -52,6 +52,7 @@ public class MainMenuView extends View {
         return false;
     }
 
+
     private void startNewGame() {
         // create a new game
         GameControl.createNewGame(RoadToSaltLake.getPlayer());
@@ -75,4 +76,6 @@ public class MainMenuView extends View {
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
     }
+
+ 
 }

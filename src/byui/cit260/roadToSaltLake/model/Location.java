@@ -17,6 +17,17 @@ public class Location implements Serializable{
     private int col;
     private int visited;
 
+    private Scene scene;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    
+    
     public Location() {
     }
 

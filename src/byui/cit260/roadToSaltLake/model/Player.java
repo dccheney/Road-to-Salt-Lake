@@ -26,7 +26,34 @@ public class Player implements Serializable{
     private int userMinutes;
     private HashMap <String, Double> resources;
     
+    private Game game;
+    private Wagon wagon;
+    private Resources[] resources;
     // methods
+
+    public Resources[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resources[] resources) {
+        this.resources = resources;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Wagon getWagon() {
+        return wagon;
+    }
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
 
     public Player() {
         this.resources = new HashMap<String, Double>();

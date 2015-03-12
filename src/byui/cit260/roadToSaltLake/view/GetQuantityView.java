@@ -12,7 +12,7 @@ import roadtosaltlake.RoadToSaltLake;
  *
  * @author David
  */
-public class GetQuantityView {
+public class GetQuantityView  {
     Store store = new Store();
 
     private double quantity = 0.0; // initializes the number of Items to be purchased

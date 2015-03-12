@@ -53,7 +53,6 @@ public class GameMenuView extends View {
         }
         return false;
     }
-    
     private void continueTrail() {
         System.out.println("*** ContinueTrail function called");
     }
@@ -77,3 +76,4 @@ public class GameMenuView extends View {
         store.display();
     }
 }
+    

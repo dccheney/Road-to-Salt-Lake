@@ -21,11 +21,11 @@ public class HelpMenuView extends View{
             + "\nR - Return"
             + "\n----------------------------------\n");
     }
-    
     @Override
-    public boolean doAction(Object obj) {
+    public boolean doAction (Object obj){
         String value = obj.toString();
         char choice = value.charAt(0);
+    
         switch (choice) {
             case 'G': // Continue on Trail	
                 this.goal();
@@ -48,7 +48,7 @@ public class HelpMenuView extends View{
         }   
         return false;
     }
-    
+
     private void goal() {
         System.out.println("*** goal function called ***");
     }
@@ -64,4 +64,6 @@ public class HelpMenuView extends View{
     private void potentialHazards() {
         System.out.println("*** potentialHazards function called ***");
     }
+
 }
+    
