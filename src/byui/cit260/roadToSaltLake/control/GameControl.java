@@ -37,6 +37,7 @@ public class GameControl {
         createResourceCostList(game.getResourceCostList());
         createPlayerResourceList(player.getResources());
     }
+    
     private static void createResourceCostList(HashMap resourceCost){
         resourceCost.put("Oxen", 30.0);
         resourceCost.put("Food", .20); 
@@ -46,6 +47,7 @@ public class GameControl {
         resourceCost.put("Wheels", 10.0);
         resourceCost.put("Covers", 5.0);
     }
+    
     private static void createPlayerResourceList(HashMap resources){
         resources.put("Oxen", 0.0);
         resources.put("Food", 0.0);
