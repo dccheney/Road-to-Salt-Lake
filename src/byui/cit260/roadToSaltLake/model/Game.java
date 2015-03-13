@@ -28,7 +28,6 @@ public class Game implements Serializable{
         this.player = player;
     }
     
-
     public Map getMap() {
         return map;
     }
@@ -58,6 +57,10 @@ public class Game implements Serializable{
 
     public HashMap<String, Double> getResourceCost() {
         return resourceCost;
+    }
+    
+    public HashMap<String, Double> getResourceCost(String item) {
+        return resourceCost.get(item);
     }
 
     public void setResourceCost(HashMap<String, Double> resourceCost) {
@@ -102,6 +105,10 @@ public class Game implements Serializable{
     }
 
     public void setWagon(Wagon wagon) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public HashMap getResourceCostList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -6,6 +6,7 @@
 package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.Store;
+import byui.cit260.roadToSaltLake.control.GameControl;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 /**
@@ -61,7 +62,7 @@ public class GetQuantityView  {
     public double buyItem(String item, double bankAmount) {
         if ("Oxen".equals(item)){
             message = "How many oxen would you like to purchase?"
-                + "\n\nWe recommend at least 4.  They cost $" + resourceCost.get(item) + " per ox";
+                + "\n\nWe recommend at least 4.  They cost $" + game.getResourceCost(item) + " per ox";
         }
         else if ("Food".equals(item)){
             message = "How many pounds of food would you like to purchase?"
