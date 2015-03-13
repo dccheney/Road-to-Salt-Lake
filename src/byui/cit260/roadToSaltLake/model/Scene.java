@@ -17,7 +17,14 @@ public class Scene implements Serializable{
     private String terrain;
     private String weather;
     private String sickness;
-    private String store;
+    private boolean store;
+    
+    public Scene () {
+	this.terrain = 'flat';
+	this.weather = 'sunny';
+	this.sickness = 'none';
+	this.store = true;
+}
     
     private Location[] locations;
     
@@ -29,10 +36,7 @@ public class Scene implements Serializable{
         this.locations = locations;
     }
     
- 
 
-    public Scene() {
-    }
 
     public String getTerrain() {
         return terrain;
