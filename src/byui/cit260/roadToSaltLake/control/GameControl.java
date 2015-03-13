@@ -27,7 +27,11 @@ public class GameControl {
         game.setPlayer(player); // save player in Game
                 
         Wagon wagon = new Wagon(); // create new Wagon
-        game.setWagon(wagon); // save wagon in game
+        game.setWagon(wagon); // save wagon in game 
+        
+        Scene scene = new Scene(); // create new scene
+        game.setScene (scene); // save scene in game
+       
         
         Map map = MapControl.createMap(); //create and initialize new map
         game.setMap(map); // save map in game
