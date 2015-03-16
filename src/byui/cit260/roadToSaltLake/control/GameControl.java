@@ -59,6 +59,15 @@ public class GameControl {
         resources.put("Wheels", 0.0);
         resources.put("Covers", 0.0);
     }
-    
+  
+    public static double getDistanceTraveled (double [] milesTraveled) {
+       double total = 0;
+       
+       for (int i=0; i < milesTraveled.length; i++) {
+           total = total + milesTraveled[i]; 
+       }
+        return total;
+           
+    }
     
 }
