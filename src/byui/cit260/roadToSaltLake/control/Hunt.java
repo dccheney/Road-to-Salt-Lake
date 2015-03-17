@@ -38,11 +38,20 @@ public class Hunt {
         else
         {
             Random random = new Random();
+            int foodShot;
+            double hits = 0;
             for (int i = 0; i < ammoToUse; i++)
             {
-                ammountFood += food[(abs(random.nextInt()) + skill) % 10];
-            }
+                foodShot = food[(abs(random.nextInt()) + skill) % 10];
+                ammountFood += foodShot;
+                if (foodShot > 0)
+                {
+                    hits++;
+                }
+            } 
+            double accuracy = hits / ammoToUse * 100;
         }
+        
         return ammountFood;
     }
 }

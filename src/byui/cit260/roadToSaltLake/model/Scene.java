@@ -20,9 +20,9 @@ public class Scene implements Serializable{
     private boolean store;
     
     public Scene () {
-	this.terrain = 'flat';
-	this.weather = 'sunny';
-	this.sickness = 'none';
+//	this.terrain = 'flat';
+//	this.weather = 'sunny';
+//	this.sickness = 'none';
 	this.store = true;
 }
     
@@ -62,13 +62,13 @@ public class Scene implements Serializable{
         this.sickness = sickness;
     }
 
-    public String getStore() {
-        return store;
-    }
-
-    public void setStore(String store) {
-        this.store = store;
-    }
+//    public String getStore() {
+//        return store;
+//    }
+//
+//    public void setStore(String store) {
+//        this.store = store;
+//    }
 
     @Override
     public int hashCode() {

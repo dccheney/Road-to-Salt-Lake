@@ -18,13 +18,17 @@ public class Game implements Serializable{
     HashMap <String, Double> resourceCost = new HashMap <String, Double>();
 
     private Map map;
-    private Player[] player;
+    private Player player;
 
-    public Player[] getPlayer() {
+    
+    public Game() {
+    }
+    
+    public Player getPlayer() {
         return player;
     }
 
-    public void setPlayer(Player[] player) {
+    public void setPlayer(Player player) {
         this.player = player;
     }
     
@@ -36,9 +40,6 @@ public class Game implements Serializable{
         this.map = map;
     }
     
-    public Game() {
-    }
-
     public double getTotTime() {
         return totTime;
     }
@@ -59,7 +60,7 @@ public class Game implements Serializable{
         return resourceCost;
     }
     
-    public HashMap<String, Double> getResourceCost(String item) {
+    public Double getResourceCost(String item) {
         return resourceCost.get(item);
     }
 
@@ -67,6 +68,21 @@ public class Game implements Serializable{
         this.resourceCost = resourceCost;
     }
     
+    public void setScene(Scene scene){
+        //stuff;
+    }
+    
+    public void setPlayer() {
+        this.player = getPlayer();
+    }
+
+//    public void setWagon(Wagon wagon) {
+//        player.wagon = wagon;
+//    }
+
+    public HashMap getResourceCostList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
     @Override
@@ -98,19 +114,5 @@ public class Game implements Serializable{
     @Override
     public String toString() {
         return "Game{" + "totTime=" + totTime + ", totDistance=" + totDistance + '}';
-    }
-
-    public void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setWagon(Wagon wagon) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public HashMap getResourceCostList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    }   
 }

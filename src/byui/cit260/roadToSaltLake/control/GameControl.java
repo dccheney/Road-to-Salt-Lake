@@ -8,7 +8,9 @@ package byui.cit260.roadToSaltLake.control;
 import byui.cit260.roadToSaltLake.model.Player;
 import byui.cit260.roadToSaltLake.model.Game;
 import byui.cit260.roadToSaltLake.model.Map;
+import byui.cit260.roadToSaltLake.model.Scene;
 import byui.cit260.roadToSaltLake.model.Wagon;
+//import byui.cit260.roadToSaltLake.control.MapControl;
 import java.util.HashMap;
 import roadtosaltlake.RoadToSaltLake;
 
@@ -24,20 +26,22 @@ public class GameControl {
         Game game = new Game(); // create new game
         RoadToSaltLake.setCurrentGame(game); //save in RoadToSaltLake
         
-        game.setPlayer(player); // save player in Game
+        game.setPlayer(); // save player in Game
                 
         Wagon wagon = new Wagon(); // create new Wagon
-        game.setWagon(wagon); // save wagon in game 
+        //game.setWagon(wagon); // save wagon in game 
         
         Scene scene = new Scene(); // create new scene
-        game.setScene (scene); // save scene in game
+        game.setScene(scene); // save scene in game
        
         
-        Map map = MapControl.createMap(); //create and initialize new map
+        Map map = new Map(); //create and initialize new map
         game.setMap(map); // save map in game
         
-        MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
-                
+        //MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
+        
+        
+        
         createResourceCostList(game.getResourceCostList());
         createPlayerResourceList(player.getResources());
     }
