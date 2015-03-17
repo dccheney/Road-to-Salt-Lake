@@ -68,6 +68,11 @@ public class Game implements Serializable{
         this.resourceCost = resourceCost;
     }
     
+    public void setResourceCost(String item, Double quantity) {
+        this.resourceCost.put(item, quantity);
+        //Need to figure out how to add to instead of change value.
+    }
+    
     public void setScene(Scene scene){
         //stuff;
     }
@@ -79,10 +84,6 @@ public class Game implements Serializable{
 //    public void setWagon(Wagon wagon) {
 //        player.wagon = wagon;
 //    }
-
-    public HashMap getResourceCostList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 
     @Override
@@ -115,4 +116,8 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totTime=" + totTime + ", totDistance=" + totDistance + '}';
     }   
+
+    public void setResources(String oxen) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -24,7 +24,7 @@ public class GetQuantityView  {
     private String message = "";
     
     
-    Player player = Game.getPlayer();
+    Player player = RoadToSaltLake.getPlayer();
     Game game = player.getGame();
     
     public String getInput() {
