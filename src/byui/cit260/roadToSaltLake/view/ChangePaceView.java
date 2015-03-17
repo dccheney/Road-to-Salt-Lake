@@ -37,7 +37,7 @@ public class ChangePaceView extends View{
             case '2': // steady pace - 2.5 miles per hour
                 this.steadyPace();
                 break;
-            case '3': // strenuos pace - 2.75 miles per hour
+            case '3': // strenuous pace - 2.75 miles per hour
                 this.strenuousPace();
                 break;
             case '4': // gruelling pace - 5 miles per hour
