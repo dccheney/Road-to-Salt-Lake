@@ -5,6 +5,10 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
+import byui.cit260.roadToSaltLake.control.GameControl;
+import byui.cit260.roadToSaltLake.model.Game;
+import roadtosaltlake.RoadToSaltLake;
+
 /**
  *
  * @author David Cheney & AmyLucille
@@ -24,6 +28,7 @@ public class GameMenuView extends View {
             + "\nF - Change food rations"
             + "\nB - Buy supplies"
             + "\nV - View location on map"
+            + "\nD - View distance traveled"
             + "\nM - Main Menu"
             + "\n--------------------------------\n");
     }
@@ -50,6 +55,9 @@ public class GameMenuView extends View {
                 break;
             case 'V': // view locatin on map
                 this.viewMap();
+                break;
+            case 'D': // view distance traveled
+                this.viewDistanceTraveled();
                 break;
             case 'M': // Main Menu
                 return true;
@@ -86,5 +94,12 @@ public class GameMenuView extends View {
         ViewMapView viewMapView = new ViewMapView();
         viewMap.display();
         }
+
+    private void viewDistanceTraveled() {
+        Game game = RoadToSaltLake.getCurrentGame();
+        double totalMilesTraveled = GameControl.getDistanceTraveled(game.getDayDistance());
+        System.out.println("The Total Miles Traveled is " + totalMilesTraveled);
+               
+    }
 }
     
