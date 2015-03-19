@@ -78,17 +78,16 @@ public class Game implements Serializable{
         this.dayDistance = dayDistance;
     }
     
-    public void setResourceCost(String item, Double quantity) {
-        this.resourceCost.put(item, quantity);
-        //Need to figure out how to add to instead of change value.
+    public void setResourceCost(String item, Double cost) {
+        this.resourceCost.put(item, cost);
     }
     
     public void setScene(Scene scene){
         //stuff;
     }
     
-    public void setPlayer() {
-        this.player = getPlayer();
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
 //    public void setWagon(Wagon wagon) {

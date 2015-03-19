@@ -26,7 +26,7 @@ public class GameControl {
         Game game = new Game(); // create new game
         RoadToSaltLake.setCurrentGame(game); //save in RoadToSaltLake
         
-        game.setPlayer(); // save player in Game
+        game.setPlayer(player); // save player in Game
                 
         Wagon wagon = new Wagon(); // create new Wagon
         //game.setWagon(wagon); // save wagon in game 

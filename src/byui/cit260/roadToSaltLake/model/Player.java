@@ -24,7 +24,7 @@ public class Player implements Serializable{
     private double money;
     private int userPace;
     private int userMinutes;
-    private HashMap <String, Double> resources;
+    private HashMap <String, Double> resources = new HashMap <String, Double>();
     
     private Game game;
     private Wagon wagon;
