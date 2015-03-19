@@ -16,7 +16,7 @@ public class Game implements Serializable{
     private double totTime;
     private double totDistance;
     HashMap <String, Double> resourceCost = new HashMap <String, Double>();
-    private double [] dayDistance = new double [30];
+    private double [] dayDistance = new double [90];
     private Map map;
     private Player[] player;
     public Player[] getPlayer() {
