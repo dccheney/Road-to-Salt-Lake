@@ -55,14 +55,23 @@ public class GameControl {
         game.setResourceCost("Wheels", 10.0);
         game.setResourceCost("Covers", 5.0);
     }
+  
+    public static double getDistanceTraveled (double [] milesTraveled) {
+       double total = 0;
+       
+       for (int i=0; i < milesTraveled.length; i++) {
+           total = total + milesTraveled[i]; 
+       }
+        return total;
+    }
     
     private static void createPlayerResourceList(Game game){
-        game.getPlayer().setResources("Oxen");
-        game.getPlayer().setResources("Food");
-        game.getPlayer().setResources("Clothing");
-        game.getPlayer().setResources("Ammo");
-        game.getPlayer().setResources("Axles");
-        game.getPlayer().setResources("Wheels");
-        game.getPlayer().setResources("Covers");
+        game.setResources("Oxen");
+        game.setResources("Food");
+        game.setResources("Clothing");
+        game.setResources("Ammo");
+        game.setResources("Axles");
+        game.setResources("Wheels");
+        game.setResources("Covers");
     }
 }
