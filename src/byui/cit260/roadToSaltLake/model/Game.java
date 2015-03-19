@@ -19,20 +19,20 @@ public class Game implements Serializable{
     private double [] dayDistance = new double [30];
     private Map map;
     private Player[] player;
-    public Player[] getPlayer() {
-    private Player player;
+    public Player[] getPlayer() { return player;};
+//    private Player player;
 
     
     public Game() {
     }
     
-    public Player getPlayer() {
-        return player;
-    }
+//    public Player[] getPlayer() {
+//        return player;
+//    }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+//    public void setPlayer(Player player) {
+//        this.player = player;
+//    }
     
     public Map getMap() {
         return map;
@@ -62,8 +62,8 @@ public class Game implements Serializable{
         return resourceCost;
     }
     
-    public HashMap<String, Double> getResourceCost(HashMap<String, Double> item) {
-        return resourceCost;
+    public Double getResourceCost(String item) {
+        return resourceCost.get(item);
     }
 
     public void setResourceCost(HashMap<String, Double> resourceCost) {
