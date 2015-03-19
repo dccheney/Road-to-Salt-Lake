@@ -13,8 +13,9 @@ import byui.cit260.roadToSaltLake.model.Map;
  */
 public class MapControl {
     
-    public static Map createMap() {
-       
+    public static Map createMap(){
+        System.out.println("***called createMap()***");
+        return null;
     }
     public static void moveActorsToStartingLocation (Map map) {
         System.out.println("*** called moveActorsToStartingLocation()***");

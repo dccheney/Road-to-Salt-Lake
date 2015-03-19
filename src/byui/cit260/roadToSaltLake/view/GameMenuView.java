@@ -92,7 +92,7 @@ public class GameMenuView extends View {
 
     private void viewMap() {
         ViewMapView viewMapView = new ViewMapView();
-        viewMap.display();
+        //viewMap.display();
         }
 
     private void viewDistanceTraveled() {

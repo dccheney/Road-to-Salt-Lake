@@ -24,7 +24,7 @@ public class Player implements Serializable{
     private double money;
     private int userPace;
     private int userMinutes;
-    private HashMap <String, Double> resources;
+    private HashMap <String, Double> resources = new HashMap <String, Double>();
     
     private Game game;
     private Wagon wagon;
@@ -136,7 +136,10 @@ public class Player implements Serializable{
         this.resources.put(item, resources.get(item) + quantity);
         //Need to figure out how to add to instead of change value.
     }
-   
+    
+    public void setResources(String item) {
+        this.resources.put(item, 0.0);
+    }
 
     @Override
     public int hashCode() {

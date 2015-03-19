@@ -8,7 +8,9 @@ package byui.cit260.roadToSaltLake.control;
 import byui.cit260.roadToSaltLake.model.Player;
 import byui.cit260.roadToSaltLake.model.Game;
 import byui.cit260.roadToSaltLake.model.Map;
+import byui.cit260.roadToSaltLake.model.Scene;
 import byui.cit260.roadToSaltLake.model.Wagon;
+//import byui.cit260.roadToSaltLake.control.MapControl;
 import java.util.HashMap;
 import roadtosaltlake.RoadToSaltLake;
 
@@ -27,37 +29,31 @@ public class GameControl {
         game.setPlayer(player); // save player in Game
                 
         Wagon wagon = new Wagon(); // create new Wagon
-        game.setWagon(wagon); // save wagon in game 
+        //game.setWagon(wagon); // save wagon in game 
         
         Scene scene = new Scene(); // create new scene
-        game.setScene (scene); // save scene in game
+        game.setScene(scene); // save scene in game
        
         
-        Map map = MapControl.createMap(); //create and initialize new map
+        Map map = new Map(); //create and initialize new map
         game.setMap(map); // save map in game
         
-        MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
-                
-        createResourceCostList(game.getResourceCostList());
-        createPlayerResourceList(player.getResources());
+        //MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
+        
+        
+        createResourceCostList(game);
+        
+        createPlayerResourceList(game);
     }
-    private static void createResourceCostList(HashMap resourceCost){
-        resourceCost.put("Oxen", 30.0);
-        resourceCost.put("Food", .20); 
-        resourceCost.put("Clothing", 2.0);
-        resourceCost.put("Ammo", 2.0);
-        resourceCost.put("Axles", 10.0);
-        resourceCost.put("Wheels", 10.0);
-        resourceCost.put("Covers", 5.0);
-    }
-    private static void createPlayerResourceList(HashMap resources){
-        resources.put("Oxen", 0.0);
-        resources.put("Food", 0.0);
-        resources.put("Clothing", 0.0);
-        resources.put("Ammo", 0.0);
-        resources.put("Axles", 0.0);
-        resources.put("Wheels", 0.0);
-        resources.put("Covers", 0.0);
+    
+    private static void createResourceCostList(Game game){
+        game.setResourceCost("Oxen", 30.0);
+        game.setResourceCost("Food", .20); 
+        game.setResourceCost("Clothing", 2.0);
+        game.setResourceCost("Ammo", 2.0);
+        game.setResourceCost("Axles", 10.0);
+        game.setResourceCost("Wheels", 10.0);
+        game.setResourceCost("Covers", 5.0);
     }
   
     public static double getDistanceTraveled (double [] milesTraveled) {
@@ -67,7 +63,15 @@ public class GameControl {
            total = total + milesTraveled[i]; 
        }
         return total;
-           
     }
     
+    private static void createPlayerResourceList(Game game){
+        game.getPlayer().setResources("Oxen");
+        game.getPlayer().setResources("Food");
+        game.getPlayer().setResources("Clothing");
+        game.getPlayer().setResources("Ammo");
+        game.getPlayer().setResources("Axles");
+        game.getPlayer().setResources("Wheels");
+        game.getPlayer().setResources("Covers");
+    }
 }
