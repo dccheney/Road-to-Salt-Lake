@@ -66,12 +66,12 @@ public class GameControl {
     }
     
     private static void createPlayerResourceList(Game game){
-        game.setResources("Oxen");
-        game.setResources("Food");
-        game.setResources("Clothing");
-        game.setResources("Ammo");
-        game.setResources("Axles");
-        game.setResources("Wheels");
-        game.setResources("Covers");
+        game.getPlayer().setResources("Oxen");
+        game.getPlayer().setResources("Food");
+        game.getPlayer().setResources("Clothing");
+        game.getPlayer().setResources("Ammo");
+        game.getPlayer().setResources("Axles");
+        game.getPlayer().setResources("Wheels");
+        game.getPlayer().setResources("Covers");
     }
 }

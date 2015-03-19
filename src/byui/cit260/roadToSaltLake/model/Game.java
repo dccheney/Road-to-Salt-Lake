@@ -18,10 +18,10 @@ public class Game implements Serializable{
     HashMap <String, Double> resourceCost = new HashMap <String, Double>();
     private double [] dayDistance = new double [30];
     private Map map;
-    private Player[] player;
-    public Player[] getPlayer() { return player;};
-//    private Player player;
-
+//    private Player[] player;
+//    public Player[] getPlayer() { return player;};
+    private Player player;
+    public Player getPlayer() { return player;};
     
     public Game() {
     }
@@ -127,7 +127,7 @@ public class Game implements Serializable{
         return "Game{" + "totTime=" + totTime + ", totDistance=" + totDistance + '}';
     }   
 
-    public void setResources(String oxen) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public void setResources(String oxen) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }
