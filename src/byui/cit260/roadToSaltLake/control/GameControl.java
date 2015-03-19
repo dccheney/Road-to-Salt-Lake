@@ -41,30 +41,28 @@ public class GameControl {
         //MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map
         
         
+        createResourceCostList(game);
         
-        createResourceCostList(game.getResourceCost());
-        createPlayerResourceList(RoadToSaltLake.getPlayer().getResources());
+        createPlayerResourceList(game);
     }
     
-    private static void createResourceCostList(HashMap resourceCost){
-        RoadToSaltLake.getCurrentGame().setResourceCost("Oxen", 30.0);
-        RoadToSaltLake.getCurrentGame().setResourceCost("Food", .20); 
-        RoadToSaltLake.getCurrentGame().setResourceCost("Clothing", 2.0);
-        RoadToSaltLake.getCurrentGame().setResourceCost("Ammo", 2.0);
-        RoadToSaltLake.getCurrentGame().setResourceCost("Axles", 10.0);
-        RoadToSaltLake.getCurrentGame().setResourceCost("Wheels", 10.0);
-        RoadToSaltLake.getCurrentGame().setResourceCost("Covers", 5.0);
+    private static void createResourceCostList(Game game){
+        game.setResourceCost("Oxen", 30.0);
+        game.setResourceCost("Food", .20); 
+        game.setResourceCost("Clothing", 2.0);
+        game.setResourceCost("Ammo", 2.0);
+        game.setResourceCost("Axles", 10.0);
+        game.setResourceCost("Wheels", 10.0);
+        game.setResourceCost("Covers", 5.0);
     }
     
-    private static void createPlayerResourceList(HashMap resources){
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Oxen");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Food");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Clothing");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Ammo");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Axles");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Wheels");
-        RoadToSaltLake.getCurrentGame().getPlayer().setResources("Covers");
+    private static void createPlayerResourceList(Game game){
+        game.getPlayer().setResources("Oxen");
+        game.getPlayer().setResources("Food");
+        game.getPlayer().setResources("Clothing");
+        game.getPlayer().setResources("Ammo");
+        game.getPlayer().setResources("Axles");
+        game.getPlayer().setResources("Wheels");
+        game.getPlayer().setResources("Covers");
     }
-    
-    
 }

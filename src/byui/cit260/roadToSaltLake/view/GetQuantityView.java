@@ -6,8 +6,6 @@
 package byui.cit260.roadToSaltLake.view;
 
 import byui.cit260.roadToSaltLake.control.Store;
-import byui.cit260.roadToSaltLake.model.Game;
-import byui.cit260.roadToSaltLake.model.Player;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
 /**
@@ -22,10 +20,6 @@ public class GetQuantityView  {
     private double totItems = 0.0;
     
     private String message = "";
-    
-    
-    Player player = RoadToSaltLake.getPlayer();
-    Game game = player.getGame();
     
     public String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
@@ -69,38 +63,38 @@ public class GetQuantityView  {
             case "Oxen":
                 message = "How many oxen would you like to purchase?"
                         + "\n\nWe recommend at least 4.  They cost $"
-                        + game.getResourceCost(item)
+                        + RoadToSaltLake.getCurrentGame().getResourceCost(item)
                         + " per ox";
                 break;
             case "Food":
                 message = "How many pounds of food would you like to purchase?"
-                        + "\n\nWe recommend at least 200.  Food costs $" + game.getResourceCost(item) + " per pound";
+                        + "\n\nWe recommend at least 200.  Food costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item) + " per pound";
                 break;
             case "Clothing":
                 message = "How many sets of Clothing would you like to purchase?"
-                        + "\n\nWe recommend at least 2 per person.  Each set costs $" + game.getResourceCost(item);
+                        + "\n\nWe recommend at least 2 per person.  Each set costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
                 break;
             case "Ammo":
                 message = "How many boxes of ammunition would you like to purchase?"
                         + "\n\nThere are 20 rounds per box.  We recommend at least 3 boxes.  "
-                        + "Each ammo box costs $" + game.getResourceCost(item);
+                        + "Each ammo box costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
                 break;
             case "Axles":
                 message = "How many extra axles would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  Each axle costs $" + game.getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  Each axle costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
                 break;
             case "Wheels":
                 message = "How many extra wheels would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  One wheel costs $" + game.getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  One wheel costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
                 break;
             case "Covers":
                 message = "How many extra wagon covers would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  Each cover costs $" + game.getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  Each cover costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
                 break;
         }
         System.out.println(message);
         quantity = toFloat(getInput());
-        totItems = store.purchaseInventory(bankAmount, quantity, game.getResourceCost(item));
+        totItems = store.purchaseInventory(bankAmount, quantity, RoadToSaltLake.getCurrentGame().getResourceCost(item));
         RoadToSaltLake.getPlayer().setResources(item,quantity);
         return totItems;
     }

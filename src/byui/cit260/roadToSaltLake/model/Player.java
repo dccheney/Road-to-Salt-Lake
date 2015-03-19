@@ -136,9 +136,9 @@ public class Player implements Serializable{
         this.resources.put(item, resources.get(item) + quantity);
         //Need to figure out how to add to instead of change value.
     }
+    
     public void setResources(String item) {
         this.resources.put(item, 0.0);
-        //Need to figure out how to add to instead of change value.
     }
 
     @Override
