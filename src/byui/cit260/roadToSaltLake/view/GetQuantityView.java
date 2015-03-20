@@ -56,7 +56,6 @@ public class GetQuantityView  {
         return true; 
     }   
     
-    
     public double buyItem(String item, double bankAmount) {
         if (null != item)switch (item) {
             case "Oxen":
@@ -91,12 +90,12 @@ public class GetQuantityView  {
                         + "\n\nWe recommend at least 2.  Each cover costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
         }
-        System.out.println(message);
-        quantity = toFloat(getInput());
-        totItems = store.purchaseInventory(bankAmount, quantity, RoadToSaltLake.getCurrentGame().getResourceCost(item));
+        System.out.println(message);  // displays message specific to the item they chose to purchase
+        quantity = toFloat(getInput());  // get quantity from user
+        totItems = store.purchaseInventory(bankAmount, quantity, RoadToSaltLake.getCurrentGame().getResourceCost(item)); // calculates the totalCost after error checking
         if ("Ammo".equals(item))
-            quantity *= 20;
-        RoadToSaltLake.getPlayer().setResources(item,quantity);
+            quantity *= 20;  // Player buys 1 box and gets 20 rounds of ammo.  Had to adjust the players inventory
+        RoadToSaltLake.getPlayer().setResources(item,quantity); // sets amount of resources in player inventory
         return totItems;
     }
 
