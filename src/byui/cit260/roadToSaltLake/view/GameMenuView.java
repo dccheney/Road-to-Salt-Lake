@@ -72,7 +72,8 @@ public class GameMenuView extends View {
     }
 
     private void checkSupplies() {
-        System.out.println("*** CheckSupplies function called");
+        CheckSuppliesView checkSuppliesView = new CheckSuppliesView();
+        checkSuppliesView.display();
     }
 
     private void changePace() {

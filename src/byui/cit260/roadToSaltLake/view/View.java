@@ -6,6 +6,7 @@
 package byui.cit260.roadToSaltLake.view;
 
 import static java.lang.Character.toUpperCase;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -14,6 +15,7 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface{
     private String promptMessage;
+    
 
     public View(String promptMessage)
     {
@@ -31,6 +33,8 @@ public abstract class View implements ViewInterface{
     public void display() {
         boolean done = false;
         char selection = ' ';
+        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat i = new DecimalFormat("0");
         do {
             System.out.println(this.promptMessage); //display the main menu
             

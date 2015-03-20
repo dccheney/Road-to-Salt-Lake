@@ -5,6 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.model;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 
@@ -18,21 +19,12 @@ public class Game implements Serializable{
     HashMap <String, Double> resourceCost = new HashMap <String, Double>();
     private double [] dayDistance = new double [30];
     private Map map;
-//    private Player[] player;
-//    public Player[] getPlayer() { return player;};
     private Player player;
     public Player getPlayer() { return player;};
+    private DecimalFormat df = new DecimalFormat("0.00");
     
     public Game() {
     }
-    
-//    public Player[] getPlayer() {
-//        return player;
-//    }
-
-//    public void setPlayer(Player player) {
-//        this.player = player;
-//    }
     
     public Map getMap() {
         return map;
@@ -64,6 +56,10 @@ public class Game implements Serializable{
     
     public Double getResourceCost(String item) {
         return resourceCost.get(item);
+    }
+    
+    public String getResourceCostFormat(String item){
+        return df.format(resourceCost.get(item));
     }
 
     public void setResourceCost(HashMap<String, Double> resourceCost) {
@@ -125,8 +121,4 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totTime=" + totTime + ", totDistance=" + totDistance + '}';
     }   
-
-//    public void setResources(String oxen) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 }

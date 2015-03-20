@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.roadToSaltLake.view;
-
 import byui.cit260.roadToSaltLake.control.Store;
 import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
@@ -63,33 +62,33 @@ public class GetQuantityView  {
             case "Oxen":
                 message = "How many oxen would you like to purchase?"
                         + "\n\nWe recommend at least 4.  They cost $"
-                        + RoadToSaltLake.getCurrentGame().getResourceCost(item)
+                        + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item)
                         + " per ox";
                 break;
             case "Food":
                 message = "How many pounds of food would you like to purchase?"
-                        + "\n\nWe recommend at least 200.  Food costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item) + " per pound";
+                        + "\n\nWe recommend at least 200.  Food costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item) + " per pound";
                 break;
             case "Clothing":
                 message = "How many sets of Clothing would you like to purchase?"
-                        + "\n\nWe recommend at least 2 per person.  Each set costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
+                        + "\n\nWe recommend at least 2 per person.  Each set costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
             case "Ammo":
                 message = "How many boxes of ammunition would you like to purchase?"
                         + "\n\nThere are 20 rounds per box.  We recommend at least 3 boxes.  "
-                        + "Each ammo box costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
+                        + "Each ammo box costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
             case "Axles":
                 message = "How many extra axles would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  Each axle costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  Each axle costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
             case "Wheels":
                 message = "How many extra wheels would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  One wheel costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  One wheel costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
             case "Covers":
                 message = "How many extra wagon covers would you like to purchase?"
-                        + "\n\nWe recommend at least 2.  Each cover costs $" + RoadToSaltLake.getCurrentGame().getResourceCost(item);
+                        + "\n\nWe recommend at least 2.  Each cover costs $" + RoadToSaltLake.getCurrentGame().getResourceCostFormat(item);
                 break;
         }
         System.out.println(message);

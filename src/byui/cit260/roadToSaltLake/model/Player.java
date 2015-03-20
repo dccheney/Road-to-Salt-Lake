@@ -6,6 +6,7 @@
 package byui.cit260.roadToSaltLake.model;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -25,6 +26,8 @@ public class Player implements Serializable{
     private int userPace;
     private int userMinutes;
     private HashMap <String, Double> resources = new HashMap <String, Double>();
+    private final DecimalFormat i = new DecimalFormat("0");
+    private final DecimalFormat df = new DecimalFormat("0.00");
     
     private Game game;
     private Wagon wagon;
@@ -103,6 +106,9 @@ public class Player implements Serializable{
     public double getMoney() {
         return money;
     }
+    public String getMoneyFormat(){
+        return df.format(money);
+    }
 
     public void setMoney(double money) {
         this.money = money;
@@ -128,8 +134,8 @@ public class Player implements Serializable{
         return resources;
     }
     
-    public Double getResources(String item) {
-        return resources.get(item);
+    public String getResources(String item) {
+        return i.format(resources.get(item));
     }
 
     public void setResources(String item, Double quantity) {
