@@ -94,6 +94,8 @@ public class GetQuantityView  {
         System.out.println(message);
         quantity = toFloat(getInput());
         totItems = store.purchaseInventory(bankAmount, quantity, RoadToSaltLake.getCurrentGame().getResourceCost(item));
+        if ("Ammo".equals(item))
+            quantity *= 20;
         RoadToSaltLake.getPlayer().setResources(item,quantity);
         return totItems;
     }
