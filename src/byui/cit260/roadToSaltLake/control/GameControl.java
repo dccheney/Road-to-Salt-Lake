@@ -11,7 +11,6 @@ import byui.cit260.roadToSaltLake.model.Map;
 import byui.cit260.roadToSaltLake.model.Scene;
 import byui.cit260.roadToSaltLake.model.Wagon;
 //import byui.cit260.roadToSaltLake.control.MapControl;
-import java.util.HashMap;
 import roadtosaltlake.RoadToSaltLake;
 
 /**

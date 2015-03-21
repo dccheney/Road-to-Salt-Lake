@@ -5,7 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import static java.lang.Character.toUpperCase;
+import java.text.DecimalFormat;
 import roadtosaltlake.RoadToSaltLake;
 
 /**
@@ -13,7 +13,6 @@ import roadtosaltlake.RoadToSaltLake;
  * @author David Cheney & Amy Staiger
  */
 public class StoreView extends View {
-
     //holds the amount of money that
     private double totOxenCost = 0.0;
     private double totFoodCost = 0.0;
@@ -22,45 +21,30 @@ public class StoreView extends View {
     private double totAxleCost = 0.0;
     private double totWheelCost = 0.0;
     private double totCoverCost = 0.0;
-
     private double bankAmount = RoadToSaltLake.getPlayer().getMoney();
-
     private double total = 0.0;
+    private final DecimalFormat i = new DecimalFormat("0.00");
 
     GetQuantityView getQuantity = new GetQuantityView();
 
-    public StoreView() {
+    public StoreView(){
         super("");
-    }
-
-    @Override
-    public void display() {
-
-        char selection = ' ';
-        do {
-            System.out.println("\n\n------------------------------------------------------"
-                            +  "\n Store"
-                            +  "\n------------------------------------------------------"
-                            +  "\nWhat would you like to buy?"
-                            +  "\nItem\t\t\t\t\tTotal\nO - Oxen\t\t\t\t$" + totOxenCost
-                            +  "\nF - Food\t\t\t\t$" + totFoodCost
-                            +  "\nC - Clothing\t\t\t\t$" + totClothingCost
-                            +  "\nA - Ammo\t\t\t\t$" + totAmmoCost
-                            +  "\nX - Extra Axles\t\t\t\t$" + totAxleCost
-                            +  "\nW - Extra Wheels\t\t\t$" + totWheelCost
-                            +  "\nV - Extra Wagon Covers\t\t\t$" + totCoverCost
-                            +  "\n------------------------------------------------------"
-                            +  "\n\t\t\tTotal:\t\t$" + total
-                            +  "\n\nAmount you have:\t$" + bankAmount
-                            +  "\n\nE - Exit Store"
-                            +  "\n------------------------------------------------------\n"); //display the main menu 
-
-            String input = this.getInput(); // get the user's selection
-            selection = toUpperCase(input.charAt(0)); // get first character of string
-
-            this.doAction(selection); //do action based on selection
-
-        } while (selection != 'E');
+        System.out.println("\n\n------------------------------------------------------\n"
+                        +  "\n Store\n"
+                        +  "\n------------------------------------------------------\n"
+                        +  "\nWhat would you like to buy?" 
+                        +  "\nItem\t\t\t\t\tTotal\nO - Oxen\t\t\t\t$" + i.format(totOxenCost)
+                        +  "\nF - Food\t\t\t\t$" + i.format(totFoodCost)
+                        +  "\nC - Clothing\t\t\t\t$" + i.format(totClothingCost)
+                        +  "\nA - Ammo\t\t\t\t$" + i.format(totAmmoCost)
+                        +  "\nX - Extra Axles\t\t\t\t$" + i.format(totAxleCost)
+                        +  "\nW - Extra Wheels\t\t\t$" + i.format(totWheelCost)
+                        +  "\nV - Extra Wagon Covers\t\t\t$" + i.format(totCoverCost)
+                        +  "\n------------------------------------------------------"
+                        +  "\n\t\t\tTotal:\t\t$" + i.format(total)
+                        +  "\n\nAmount you have:\t$" + i.format(bankAmount)
+                        +  "\n\nE - Exit Store"
+                        +  "\n------------------------------------------------------\n");
     }
 
     @Override
