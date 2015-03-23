@@ -73,4 +73,12 @@ public class GameControl {
         game.getPlayer().setResources("Wheels");
         game.getPlayer().setResources("Covers");
     }
+
+    public static void assignSCenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
