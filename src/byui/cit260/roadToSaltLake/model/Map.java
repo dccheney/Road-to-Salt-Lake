@@ -5,6 +5,7 @@
  */
 package byui.cit260.roadToSaltLake.model;
 
+import byui.cit260.roadToSaltLake.control.GameControl;
 import java.io.Serializable;
 
 /**
@@ -12,13 +13,28 @@ import java.io.Serializable;
  * @author David Cheney and Amy Staiger
  */
 public class Map implements Serializable{
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private int rowCount;
     private int colCount;
 
     private Location[][] locations; 
     
-    public Map() {
+   private static Map createMap() {
+       Map map = new Map (10, 90);
+       
+       Scene [] scenes = createScenes ();
+       
+       GameControl. assignScenesToLocations(map, scenes);
+       
+       return map;
+   }
+
+    private Map(int i, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Location[][] getLocations() {
