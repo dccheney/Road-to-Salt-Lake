@@ -17,7 +17,7 @@ public class OccupationView extends View{
         super("\n\n----------------------------------"
             + "\n Please choose your occupation:"
             + "\n----------------------------------"
-            + "\n\nB - Banker"
+            + "\nB - Banker"
             + "\nC - Carpenter"
             + "\nF - Farmer"
             + "\nI - Info about each occupation"

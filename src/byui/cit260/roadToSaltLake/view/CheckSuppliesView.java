@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.roadToSaltLake.view;
-import java.text.DecimalFormat;
 import roadtosaltlake.RoadToSaltLake;
 
 /**
@@ -27,8 +26,8 @@ public class CheckSuppliesView extends View{
             +  "\nExtra Wagon Covers\t\t\t" + RoadToSaltLake.getCurrentGame().getPlayer().getResources("Covers")
             +  "\nMoney left:\t\t\t\t$" + RoadToSaltLake.getCurrentGame().getPlayer().getMoneyFormat()
             +  "\n------------------------------------------------------"
-            +  "\n\nE - Exit"
-            +  "\n\n------------------------------------------------------\n");
+            +  "\nE - Exit"
+            +  "\n------------------------------------------------------\n");
         
     }
     
