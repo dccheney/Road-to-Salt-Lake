@@ -89,4 +89,8 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "row=" + row + ", col=" + col + ", visited=" + visited + '}';
     }
+
+    void setColumn(int column) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
