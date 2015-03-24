@@ -5,10 +5,6 @@
  */
 package byui.cit260.roadToSaltLake.view;
 
-import static java.lang.Character.toUpperCase;
-import static java.lang.System.out;
-import java.util.Scanner;
-
 /**
  *
  * @author AmyLucille
@@ -16,14 +12,16 @@ import java.util.Scanner;
 public class ChangePaceView extends View{
 // Travel travel = new Travel();
     public ChangePaceView(){
-        super("\n\n**************************"
-            + "\n*  Please choose your pace.                        *"
-            + "\n*1 - No travelling - 0 miles per hour              *"
-            + "\n*2 - Steady Pace - 2.5 miles per hour              *"
-            + "\n*3 - Strenuous Pace - 2.75 miles per hour          *"
-            + "\n*4 - Gruelling Pace - 5 miles per hour             *"
-            + "\n*E - Exit to Game Menu                             *"
-            + "\n****************************");
+        super("\n\n--------------------------------------"
+            + "\n Please choose your pace"
+            + "\n--------------------------------------"
+            + "\n1 - No travelling - 0 miles per hour"
+            + "\n2 - Steady Pace - 2.5 miles per hour"
+            + "\n3 - Strenuous Pace - 2.75 miles per hour"
+            + "\n4 - Gruelling Pace - 5 miles per hour"
+            + "\n--------------------------------------"
+            + "\nE - Exit"
+            + "\n--------------------------------------\n");
     }
     
     @Override

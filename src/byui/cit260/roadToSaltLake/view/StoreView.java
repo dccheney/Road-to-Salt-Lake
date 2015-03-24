@@ -29,11 +29,16 @@ public class StoreView extends View {
 
     public StoreView(){
         super("");
-        System.out.println("\n\n------------------------------------------------------\n"
-                        +  "\n Store\n"
+        printStore();
+    }
+    
+    public void printStore(){
+        System.out.println("\n\n------------------------------------------------------"
+                        +  "\n Store"
                         +  "\n------------------------------------------------------\n"
                         +  "\nWhat would you like to buy?" 
-                        +  "\nItem\t\t\t\t\tTotal\nO - Oxen\t\t\t\t$" + i.format(totOxenCost)
+                        +  "\nItem\t\t\t\t\tTotal\n----\t\t\t\t\t-----"
+                        +  "\nO - Oxen\t\t\t\t$" + i.format(totOxenCost)
                         +  "\nF - Food\t\t\t\t$" + i.format(totFoodCost)
                         +  "\nC - Clothing\t\t\t\t$" + i.format(totClothingCost)
                         +  "\nA - Ammo\t\t\t\t$" + i.format(totAmmoCost)
@@ -43,10 +48,10 @@ public class StoreView extends View {
                         +  "\n------------------------------------------------------"
                         +  "\n\t\t\tTotal:\t\t$" + i.format(total)
                         +  "\n\nAmount you have:\t$" + i.format(bankAmount)
-                        +  "\n\nE - Exit Store"
+                        +  "\nE - Exit Store"
                         +  "\n------------------------------------------------------\n");
     }
-
+    
     @Override
     public boolean doAction(Object obj) {
         String value = obj.toString();
@@ -100,6 +105,7 @@ public class StoreView extends View {
         if (total + bankAmount != RoadToSaltLake.getPlayer().getMoney()) {
             bankAmount = RoadToSaltLake.getPlayer().getMoney() - total;
         }
+        printStore();
     }
 
     private void checkError() {
