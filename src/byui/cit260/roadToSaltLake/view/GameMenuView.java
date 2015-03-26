@@ -44,9 +44,6 @@ public class GameMenuView extends View {
             case 'S': // Check Supplies
                 this.checkSupplies();
                 break;
-            case 'P': // Change Pace
-                this.changePace();
-                break;
             case 'F': // Change Food Rations
                 this.changeRations();
                 break;
@@ -68,17 +65,13 @@ public class GameMenuView extends View {
         return false;
     }
     private void continueTrail() {
-        System.out.println("*** ContinueTrail function called");
+        ChooseDirectionView chooseDirectionView = new ChooseDirectionView();
+        chooseDirectionView.display();
     }
 
     private void checkSupplies() {
         CheckSuppliesView checkSuppliesView = new CheckSuppliesView();
         checkSuppliesView.display();
-    }
-
-    private void changePace() {
-        ChangePaceView changePaceView = new ChangePaceView();
-        changePaceView.display();
     }
 
     private void changeRations() {
