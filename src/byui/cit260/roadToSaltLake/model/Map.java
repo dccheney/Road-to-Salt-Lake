@@ -53,16 +53,16 @@ for (int row = 0; row < noOfRows; row++) {
 		Location location = new Location();
 		location.setColumn(column);
 		location.setRow(row);
-		location.setVisited(false);
+		//location.setVisited(false);
 		
 		//assign the location ojbect to the current position in array
 		locations[row][column] = location;
 		}
 	}
 }
-    private Map(int i, int i0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    private Map(int row, int col) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public Map() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

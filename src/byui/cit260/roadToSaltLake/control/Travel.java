@@ -5,6 +5,8 @@
  */
 package byui.cit260.roadToSaltLake.control;
 
+import byui.cit260.roadToSaltLake.model.Location;
+
 /**
  *
  * @author AmyLucille
@@ -12,23 +14,8 @@ package byui.cit260.roadToSaltLake.control;
 public class Travel {
     
     
-    double mapDistance (int userPace, double userMinutes)
+    double mapDistance (Location location )
     {
-        double distanceTraveled;
-        
-        if (userPace <= 0 || userPace > 4)
-        {
-            return -1;
-        }
-        
-        if (userMinutes < 0 || userMinutes > 480) 
-        {
-            return -2;
-        }
-       
-        distanceTraveled = userMinutes/60 * userPace;
-        
-        return distanceTraveled;
+        return 10;
     }   
-       
 }

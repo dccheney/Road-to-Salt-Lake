@@ -14,7 +14,10 @@ import java.util.Objects;
  */
 public enum Scene implements Serializable{
     
-    Nauvoo("swamp",Weather.rainGood,true),;
+    /**
+     * here is the enum of scenes
+     */
+    Nauvoo("swamp",Weather.rainGood,true);
     
     private String terrain;
     private Weather weather;
