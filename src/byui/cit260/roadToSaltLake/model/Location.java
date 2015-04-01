@@ -6,6 +6,7 @@
 package byui.cit260.roadToSaltLake.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Location implements Serializable{
     
     private int row;
     private int col;
-    private int visited;
+    private boolean visited;
 
     private Scene scene;
 
@@ -47,20 +48,21 @@ public class Location implements Serializable{
         this.col = col;
     }
 
-    public int getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(int visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + this.row;
-        hash = 67 * hash + this.col;
-        hash = 67 * hash + this.visited;
+        int hash = 5;
+        hash = 11 * hash + this.row;
+        hash = 11 * hash + this.col;
+        hash = 11 * hash + (this.visited ? 1 : 0);
+        hash = 11 * hash + Objects.hashCode(this.scene);
         return hash;
     }
 
