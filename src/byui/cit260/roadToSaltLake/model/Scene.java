@@ -28,6 +28,8 @@ public enum Scene implements Serializable {
     riverCrossingBad("water", Weather.Cold, false),
     hilly("uneven", Weather.Calm, false),
     muddy("muddy", Weather.HeatBad, false),
+    snow("Wet", Weather.Snow, false),
+    
     
     Nauvoo("swamp", Weather.RainGood, true),
     SugarCreek("water", Weather.HeatBad, false),
@@ -58,7 +60,7 @@ public enum Scene implements Serializable {
     BearRiver("water", Weather.Calm, false),
     TheNeedlesEchoCanyon("water", Weather.Cool, false),
     BigMountainPassRoadEmigrationCanyon("rocky", Weather.Cool, false),
-    SaltLakeValley("prairie", Weather.HeatGood, true);
+    SaltLakeCity("prairie", Weather.HeatGood, true);
     
     private String terRain;
     private Weather weather;
