@@ -50,36 +50,6 @@ public class Map implements Serializable {
         }
     }
 
-// page 28
-    private static Scene[] createScenes() throws MapControlException {
-        BufferedImage image = null;
-
-        Game game = RoadToSaltLake.getCurrentGame();
-
-        Scene[] scenes = new Scene[Scene.values().length];
-
-        Scene startingScene = new Scene();
-        startingScene.setDescription(
-                +++startingScene.setMapSymbol();
-        startingScene.setBlocked(false);
-        startingScene.setTravelTime(240);
-        ImageIcon startingSceneImage = MapControl.getImage(startingScene,
-                ++ ++ ++"");
-        startingScene.setIcon(startingSceneImage);
-        scenes[Scene.start.ordinal()] = startingScene;
-
-        Scene finishScene = new Scene();
-        finishScene.setDescription(
-                ++ ++
-        ");
-	finishScene.setMapSymbol("+++");
-        finishScene.setBlocked(false);
-        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        ImageIcon finishSceneImage = MapContgrol.getImage(finishScene, ....);
-		finishScene.setIcon(finishSceneImage);
-        scenes[Scene.finish.ordinal()] = finishScene;
-    }
-
     private static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
 
@@ -265,8 +235,10 @@ public class Map implements Serializable {
         locations[3][11].setScene(scenes[Scene.mountain.ordinal()]);
         locations[3][10].setScene(scenes[Scene.mountain.ordinal()]);
         
-        for (int i = 0, j = 0; j < locations[].length; i++, j++){
-            
+        for (int i = 0; i < locations[].length; i++){
+            for (int j = 0; j < locations[][].length; j++){
+                
+            }
         }
             
     }
