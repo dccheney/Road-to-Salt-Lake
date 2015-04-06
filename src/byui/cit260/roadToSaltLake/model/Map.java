@@ -235,12 +235,12 @@ public class Map implements Serializable {
         locations[3][11].setScene(scenes[Scene.mountain.ordinal()]);
         locations[3][10].setScene(scenes[Scene.mountain.ordinal()]);
         
-        for (int i = 0; i < locations[].length; i++){
-            for (int j = 0; j < locations[][].length; j++){
-                
-            }
+        for (int i=0; i < locations.length;i++){
+           for (int j=0; j < locations[i].length;j++){
+               if (locations[i][j] == null)
+                   locations[i][j].setScene(scenes[Scene.prairieCalm.ordinal()]);
+           }
         }
-            
     }
 
 //
