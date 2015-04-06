@@ -29,12 +29,13 @@ public class GameControl {
                 
 //        Wagon wagon = new Wagon(); // create new Wagon
         //game.setWagon(wagon); // save wagon in game 
-//        
+        
 //        Scene scene = new Scene(); // create new scene
-        //game.setScene(scene); // save scene in game
+//        game.setScene(scene); // save scene in game
        
         
         Map map = new Map(10,90); //create and initialize new map
+        
         game.setMap(map); // save map in game
         
         //MapControl.moveActorsToStartingLocation(map); // move actors to starting position in the map

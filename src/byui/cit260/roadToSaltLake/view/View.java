@@ -62,7 +62,7 @@ public abstract class View implements ViewInterface{
             input = input.trim();
             
             //if the name is invalid (less than two characters in length
-            if (input.length() != 1 && View.isNumeric(input)) {
+            if (input.length() != 1 || View.isNumeric(input)) {
                 System.out.println("Invalid entry - the entry must not be blank");
                 continue; //and repeat again
             }
