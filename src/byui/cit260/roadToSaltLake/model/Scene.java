@@ -62,19 +62,19 @@ public enum Scene implements Serializable {
     BigMountainPassRoadEmigrationCanyon("rocky", Weather.Cool, false),
     SaltLakeCity("prairie", Weather.HeatGood, true);
     
-    private String terRain;
+    private String terrain;
     private Weather weather;
     private boolean store;
     
     
-    Scene (String terRain, Weather weather, boolean store) {
-        this.terRain = terRain;
+    Scene (String terrain, Weather weather, boolean store) {
+        this.terrain = terrain;
         this.weather = weather;
         this.store = store;
     }
 
-    public String getTerRain() {
-        return terRain;
+    public String getTerrain() {
+        return terrain;
     }
 
     public Weather getWeather() {
