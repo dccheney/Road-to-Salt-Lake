@@ -6,10 +6,7 @@
 package byui.cit260.roadToSaltLake.model;
 
 import byui.cit260.roadToSaltLake.control.GameControl;
-import java.awt.image.BufferedImage;
 import java.io.Serializable;
-import static java.lang.System.in;
-import roadtosaltlake.RoadToSaltLake;
 
 /**
  *

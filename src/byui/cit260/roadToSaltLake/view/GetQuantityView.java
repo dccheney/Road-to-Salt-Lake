@@ -5,8 +5,10 @@
  */
 package byui.cit260.roadToSaltLake.view;
 import byui.cit260.roadToSaltLake.control.Store;
-import java.util.Scanner;
 import roadtosaltlake.RoadToSaltLake;
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 /**
  *
  * @author David
@@ -22,9 +24,8 @@ public class GetQuantityView  {
     
     public String getInput() {
         boolean valid = false; // indicates if the name has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);  //keyboard input stream
-        
+        String input = null;        
+        Scanner keyboard = new Scanner(System.in);
         while(!valid) { // while a valid menu item has not been retrieved
             
             //prompt for the menu selection

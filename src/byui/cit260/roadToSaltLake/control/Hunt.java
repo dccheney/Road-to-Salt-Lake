@@ -16,12 +16,12 @@ public class Hunt {
     int hunting(int ammo, int ammoToUse, int skill)
     {
         int ammountFood = 0;
-        //int[] food = {5, 28, 0, 3, 17, 0, 8, 49, 0, 35};
+        int[] food = {5, 28, 0, 3, 17, 0, 8, 49, 0, 35};
         
         // for testing purposes I will use a simpler array because every test
         // will produce a different output with the array above which is what we
         // want for the game, but we can't predict the outcomes for testing purposes
-        int[] food = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+        //int[] food = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
         
         if (ammoToUse < 1)
         {
@@ -55,3 +55,10 @@ public class Hunt {
         return ammountFood;
     }
 }
+/*
+for (int i = 0; i < food.length; i++) {
+    System.out.println(food[i] + ", ");
+}
+
+
+*/
