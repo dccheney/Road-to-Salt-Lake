@@ -12,8 +12,6 @@ import byui.cit260.roadToSaltLake.model.Location;
  * @author AmyLucille
  */
 public class Travel {
-    
-    
     double mapDistance (Location location )
     {
         return 10;
