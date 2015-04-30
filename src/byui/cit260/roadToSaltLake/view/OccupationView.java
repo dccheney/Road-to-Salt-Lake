@@ -47,7 +47,7 @@ public class OccupationView extends View{
                 player.setMoney(400.0);
                 break;
             case 'I': // Info about Occupations
-                System.out.println("\nMore info about occupations");
+                this.info();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -57,6 +57,12 @@ public class OccupationView extends View{
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         return true;
+    }
+
+    private void info() {
+        System.out.println("\n\n\nA Banker starts out with a lot of money, but low skill level"
+                + "A Carpenter starts out with less money than the banker and a higher skill level"
+                + "A Farmer starts out with very little money and the highest skill level");
     }
     
 }

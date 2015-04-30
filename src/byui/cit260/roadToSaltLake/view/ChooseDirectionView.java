@@ -31,16 +31,16 @@ public class ChooseDirectionView extends View{
             case 'O': // no travelling - 0 miles per hour
             case '0':
                 this.noTravelling();
-                break;
+                return true;
             case 'N': // steady pace - 2.5 miles per hour
                 this.moveNorthWest();
-                break;
+                return true;
             case 'W': // strenuous pace - 2.75 miles per hour
                 this.moveWest();
-                break;
+                return true;
             case 'S': // gruelling pace - 5 miles per hour
                 this.moveSouthWest();
-                break;
+                return true;
             case 'E': // exit to main menu
                 return true;
             default:

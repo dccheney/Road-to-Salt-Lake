@@ -49,7 +49,7 @@ public class HelpMenuView extends View{
     }
 
     private void goal() {
-        System.out.println("The goal of this game is to travel accross the plains\n"
+        System.out.println("\n\n\nThe goal of this game is to travel accross the plains\n"
                 + "to the promised land away from persecution in 90 days.\n"
                 + "this is a difficult task as you could get lost, or\n"
                 + "sickness could slow you down. Other hazards may thwart\n"
@@ -57,20 +57,20 @@ public class HelpMenuView extends View{
     }
 
     private void progressDisplay() {
-        System.out.println("A map will show you where you have been, how far you\n"
+        System.out.println("\n\n\nA map will show you where you have been, how far you\n"
                 + "have come, roughly how much further the journey is.\n"
                 + "The map display will also show you how many days you\n"
                 + "you have traveled.");
     }
 
     private void howToGetSupplies() {
-        System.out.println("Supplies can be purchased at stores when you are at a\n"
+        System.out.println("\n\n\nSupplies can be purchased at stores when you are at a\n"
                 + "settlement.  You can also hunt for perishable food\n"
                 + "Skill will play a large roll in this");
     }
 
     private void potentialHazards() {
-        System.out.println("The potential hazards that could befall your wagon team\n"
+        System.out.println("\n\n\nThe potential hazards that could befall your wagon team\n"
                 + "include, but are not limited to,:\n"
                 + "Extreme Heat\n"
                 + "Extreme Cold\n"
@@ -78,6 +78,5 @@ public class HelpMenuView extends View{
                 + "Illness\n"
                 + "etc.");
     }
-
 }
     
