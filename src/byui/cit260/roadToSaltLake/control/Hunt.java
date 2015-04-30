@@ -55,10 +55,3 @@ public class Hunt {
         return ammountFood;
     }
 }
-/*
-for (int i = 0; i < food.length; i++) {
-    System.out.println(food[i] + ", ");
-}
-
-
-*/
