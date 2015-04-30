@@ -27,20 +27,19 @@ public class HelpMenuView extends View{
         char choice = value.charAt(0);
     
         switch (choice) {
-            case 'G': // Continue on Trail	
+            case 'G': // Display goal of the game	
                 this.goal();
                 break;
-            case 'M': // Check Supplies
+            case 'M': // Display how progress is determined
                 this.progressDisplay();
                 break;
-            case 'S': // Change Pace
+            case 'S': // Explain how to get supplies
                 this.howToGetSupplies();
                 break;
-            case 'H': // Change Food Rations
+            case 'H': // Display list of potential hazards
                 this.potentialHazards();
                 break;
-            case 'R': // Buy Supplies
-                System.out.println("*** Leaving Help Menu ***");
+            case 'R': // return
                 return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -50,19 +49,34 @@ public class HelpMenuView extends View{
     }
 
     private void goal() {
-        System.out.println("*** goal function called ***");
+        System.out.println("The goal of this game is to travel accross the plains\n"
+                + "to the promised land away from persecution in 90 days.\n"
+                + "this is a difficult task as you could get lost, or\n"
+                + "sickness could slow you down. Other hazards may thwart\n"
+                + "your attempt to complete the trek.");
     }
 
     private void progressDisplay() {
-        System.out.println("*** progressDisplay function called ***");
+        System.out.println("A map will show you where you have been, how far you\n"
+                + "have come, roughly how much further the journey is.\n"
+                + "The map display will also show you how many days you\n"
+                + "you have traveled.");
     }
 
     private void howToGetSupplies() {
-        System.out.println("*** howToGetSupplies function called ***");
+        System.out.println("Supplies can be purchased at stores when you are at a\n"
+                + "settlement.  You can also hunt for perishable food\n"
+                + "Skill will play a large roll in this");
     }
 
     private void potentialHazards() {
-        System.out.println("*** potentialHazards function called ***");
+        System.out.println("The potential hazards that could befall your wagon team\n"
+                + "include, but are not limited to,:\n"
+                + "Extreme Heat\n"
+                + "Extreme Cold\n"
+                + "Storms\n"
+                + "Illness\n"
+                + "etc.");
     }
 
 }

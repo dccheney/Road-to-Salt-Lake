@@ -23,7 +23,6 @@ public class Player implements Serializable{
     private int age;
     private float skill;
     private double money;
-    private int userPace;
     private int userMinutes;
     private HashMap <String, Double> resources = new HashMap <String, Double>();
     private final DecimalFormat i = new DecimalFormat("0");
@@ -53,7 +52,6 @@ public class Player implements Serializable{
         
     }
 
-    
     
     public String getOccupation() {
         return occupation;
@@ -114,14 +112,6 @@ public class Player implements Serializable{
         this.money = money;
     }
 
-    public int getUserPace() {
-        return userPace;
-    }
-
-    public void setUserPace(int userPace) {
-        this.userPace = userPace;
-    }
-
     public int getUserMinutes() {
         return userMinutes;
     }
@@ -157,7 +147,6 @@ public class Player implements Serializable{
         hash = 29 * hash + this.age;
         hash = 29 * hash + Float.floatToIntBits(this.skill);
         hash = 29 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
-        hash = 29 * hash + this.userPace;
         hash = 29 * hash + this.userMinutes;
         hash = 29 * hash + Objects.hashCode(this.resources);
         return hash;
@@ -193,9 +182,6 @@ public class Player implements Serializable{
         if (Double.doubleToLongBits(this.money) != Double.doubleToLongBits(other.money)) {
             return false;
         }
-        if (this.userPace != other.userPace) {
-            return false;
-        }
         if (this.userMinutes != other.userMinutes) {
             return false;
         }
@@ -207,6 +193,6 @@ public class Player implements Serializable{
 
     @Override
     public String toString() {
-        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userPace=" + userPace + ", userMinutes=" + userMinutes + ", resources=" + resources + '}';
+        return "Player{" + "occupation=" + occupation + ", name=" + name + ", gender=" + gender + ", health=" + health + ", age=" + age + ", skill=" + skill + ", money=" + money + ", userMinutes=" + userMinutes + ", resources=" + resources + '}';
     }
 }

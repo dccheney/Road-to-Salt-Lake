@@ -7,6 +7,8 @@ package byui.cit260.roadToSaltLake.model;
 
 import byui.cit260.roadToSaltLake.control.GameControl;
 import java.io.Serializable;
+import static java.lang.Math.abs;
+import java.util.Random;
 
 /**
  *
@@ -30,7 +32,7 @@ public class Map implements Serializable {
         this.rowCount = noOfRows;
         this.colCount = noOfColumns;
 
-//create 2-D array for location objects
+        //create 2-D array for location objects
         this.locations = new Location[noOfRows][noOfColumns];
 
         for (int row = 0; row < noOfRows; row++) {
@@ -46,10 +48,18 @@ public class Map implements Serializable {
             }
         }
     }
+    
+    
+
+
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
+
         Location[][] locations = map.getLocations();
 
+        // predetermined locations of the best path to take to Salt Lake. Players
+        // won't know this is what best path is. This includes all the land marks that
+        // the pioneers actually visited.
         locations[7][94].setScene(scenes[Scene.Nauvoo.ordinal()]);
         locations[9][47].setScene(scenes[Scene.hilly.ordinal()]);
         locations[9][46].setScene(scenes[Scene.hilly.ordinal()]);
@@ -231,31 +241,39 @@ public class Map implements Serializable {
         locations[3][24].setScene(scenes[Scene.mountain.ordinal()]);
         locations[3][11].setScene(scenes[Scene.mountain.ordinal()]);
         locations[3][10].setScene(scenes[Scene.mountain.ordinal()]);
+
         
-        for (int i=0; i < locations.length;i++){
-           for (int j=0; j < locations[i].length;j++){
-               if (locations[i][j] == null)
-                   locations[i][j].setScene(scenes[Scene.prairieCalm.ordinal()]);
-           }
+        Random rand = new Random();
+        Scene[] rPlaces = {Scene.prairieCalm,
+            Scene.prairieFire,
+            Scene.mountain,
+            Scene.hilly,
+            Scene.muddy};
+        
+        for (int i = 0; i < locations.length; i++) {
+            for (int j = 0; j < locations[i].length; j++) {
+                if (locations[i][j] == null) //trying to setup a random generator for all the locations not specified.
+                {
+                    locations[i][j].setScene(scenes[rPlaces[abs(rand.nextInt()) % 5].ordinal()]); //setScene(scenes[Scene.prairieCalm.ordinal()]);
+                }
+            }
         }
     }
-
 
     private static Scene[] createScenes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-   private static Map createMap() {
-       Map map = new Map (10, 90);
-       
-       Scene [] scenes = createScenes();
-       
-       GameControl.assignScenesToLocations(map, scenes);
-       
-       return map;
-   }
-   
+
+    private static Map createMap() {
+        Map map = new Map(10, 95);
+
+        Scene[] scenes = createScenes();
+
+        GameControl.assignScenesToLocations(map, scenes);
+
+        return map;
+    }
+
     public Location[][] getLocations() {
         return locations;
     }

@@ -17,7 +17,7 @@ public enum Scene implements Serializable {
     /**
      * here is the enum of scenes
      */
-//    Nauvoo("swamp",Weather.RainGood,true);
+
     mountain("rocky", Weather.Snow, false),
     river("water", Weather.Calm, false),
     prairieFire("prairie", Weather.HeatBad, false),

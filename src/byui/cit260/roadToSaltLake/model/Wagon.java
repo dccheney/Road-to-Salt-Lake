@@ -21,9 +21,9 @@ public class Wagon implements Serializable{
 
      
     public Wagon () {
-	this.wheels = 0;
-	this.cover = 0;
-	this.axles = 0;
+	this.wheels = 4;
+	this.cover = 1;
+	this.axles = 2;
 }
 
     public int getWheels() {
