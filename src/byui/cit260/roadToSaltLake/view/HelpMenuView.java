@@ -9,25 +9,27 @@ package byui.cit260.roadToSaltLake.view;
  *
  * @author David
  */
-public class HelpMenuView extends View{
-    public HelpMenuView(){
+public class HelpMenuView extends View {
+
+    public HelpMenuView() {
         super("\n\n----------------------------------"
-            + "\n Help Menu "
-            + "\n----------------------------------"
-            + "\nG - What is the goal of the game?"
-            + "\nM - How is progress displayed?"
-            + "\nS - How to get supplies?"
-            + "\nH - What hazards could I encounter?"
-            + "\nR - Return"
-            + "\n----------------------------------\n");
+                + "\n Help Menu "
+                + "\n----------------------------------"
+                + "\nG - What is the goal of the game?"
+                + "\nM - How is progress displayed?"
+                + "\nS - How to get supplies?"
+                + "\nH - What hazards could I encounter?"
+                + "\nR - Return"
+                + "\n----------------------------------\n");
     }
+
     @Override
-    public boolean doAction (Object obj){
+    public boolean doAction(Object obj) {
         String value = obj.toString();
         char choice = value.charAt(0);
-    
+
         switch (choice) {
-            case 'G': // Display goal of the game	
+            case 'G': // Display goal of the game
                 this.goal();
                 break;
             case 'M': // Display how progress is determined
@@ -44,7 +46,7 @@ public class HelpMenuView extends View{
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
-        }   
+        }
         return false;
     }
 
@@ -79,4 +81,3 @@ public class HelpMenuView extends View{
                 + "etc.");
     }
 }
-    

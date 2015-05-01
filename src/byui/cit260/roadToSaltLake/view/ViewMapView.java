@@ -9,6 +9,6 @@ package byui.cit260.roadToSaltLake.view;
  *
  * @author AmyLucille
  */
-class ViewMapView {
-    
+class ViewMapView{
+   
 }
